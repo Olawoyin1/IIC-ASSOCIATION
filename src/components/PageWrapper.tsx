@@ -1,111 +1,142 @@
-import { motion, Variants } from "framer-motion";
+// import { motion, Variants } from "framer-motion";
+// import type { ReactNode, FC } from "react";
+// import { useMemo } from "react";
+
+// const duration = 0.6;
+// const ease = "easeInOut";
+
+// const variantsList: Variants[] = [
+//   {
+//     initial: {
+//       opacity: 0,
+//       x: 70,
+//       transition: { duration, ease },
+//     },
+//     animate: {
+//       opacity: 1,
+//       x: 0,
+//       transition: { duration, ease },
+//     },
+//     exit: {
+//       opacity: 0,
+//       x: -70,
+//       transition: { duration, ease },
+//     },
+//   },
+//   {
+//     initial: {
+//       opacity: 0,
+//       y: 50,
+//       transition: { duration, ease },
+//     },
+//     animate: {
+//       opacity: 1,
+//       y: 0,
+//       transition: { duration, ease },
+//     },
+//     exit: {
+//       opacity: 0,
+//       y: -50,
+//       transition: { duration, ease },
+//     },
+//   },
+//   {
+//     initial: {
+//       opacity: 0,
+//       x: -100,
+//       transition: { duration, ease },
+//     },
+//     animate: {
+//       opacity: 1,
+//       x: 0,
+//       transition: { duration, ease },
+//     },
+//     exit: {
+//       opacity: 0,
+//       x: 100,
+//       transition: { duration, ease },
+//     },
+//   },
+//   {
+//     initial: {
+//       opacity: 0,
+//       y: -100,
+//       transition: { duration, ease },
+//     },
+//     animate: {
+//       opacity: 1,
+//       y: 0,
+//       transition: { duration, ease },
+//     },
+//     exit: {
+//       opacity: 0,
+//       y: 100,
+//       transition: { duration, ease },
+//     },
+//   },
+//   {
+//     initial: {
+//       opacity: 0,
+//       transition: { duration, ease },
+//     },
+//     animate: {
+//       opacity: 1,
+//       transition: { duration, ease },
+//     },
+//     exit: {
+//       opacity: 0,
+//       transition: { duration, ease },
+//     },
+//   },
+// ];
+
+// interface PageWrapperProps {
+//   children: ReactNode;
+// }
+
+// const PageWrapper: FC<PageWrapperProps> = ({ children }) => {
+//   const randomVariant = useMemo(
+//     () => variantsList[Math.floor(Math.random() * variantsList.length)],
+//     []
+//   );
+
+//   return (
+//     <motion.div
+//       initial="initial"
+//       animate="animate"
+//       exit="exit"
+//       variants={randomVariant}
+//     >
+//       {children}
+//     </motion.div>
+//   );
+// };
+
+// export default PageWrapper;
+
+
+import { motion } from "framer-motion";
 import type { ReactNode, FC } from "react";
-import { useMemo } from "react";
 
-const duration = 0.6;
-const ease = "easeInOut";
+const transition = { duration: 0.6, ease: "easeInOut" };
 
-const variantsList: Variants[] = [
-  {
-    initial: {
-      opacity: 0,
-      x: 70,
-      transition: { duration, ease },
-    },
-    animate: {
-      opacity: 1,
-      x: 0,
-      transition: { duration, ease },
-    },
-    exit: {
-      opacity: 0,
-      x: -70,
-      transition: { duration, ease },
-    },
-  },
-  {
-    initial: {
-      opacity: 0,
-      y: 50,
-      transition: { duration, ease },
-    },
-    animate: {
-      opacity: 1,
-      y: 0,
-      transition: { duration, ease },
-    },
-    exit: {
-      opacity: 0,
-      y: -50,
-      transition: { duration, ease },
-    },
-  },
-  {
-    initial: {
-      opacity: 0,
-      x: -100,
-      transition: { duration, ease },
-    },
-    animate: {
-      opacity: 1,
-      x: 0,
-      transition: { duration, ease },
-    },
-    exit: {
-      opacity: 0,
-      x: 100,
-      transition: { duration, ease },
-    },
-  },
-  {
-    initial: {
-      opacity: 0,
-      y: -100,
-      transition: { duration, ease },
-    },
-    animate: {
-      opacity: 1,
-      y: 0,
-      transition: { duration, ease },
-    },
-    exit: {
-      opacity: 0,
-      y: 100,
-      transition: { duration, ease },
-    },
-  },
-  {
-    initial: {
-      opacity: 0,
-      transition: { duration, ease },
-    },
-    animate: {
-      opacity: 1,
-      transition: { duration, ease },
-    },
-    exit: {
-      opacity: 0,
-      transition: { duration, ease },
-    },
-  },
-];
+const variant = {
+  initial: { opacity: 0, y: 50, transition },
+  animate: { opacity: 1, y: 0, transition },
+  exit: { opacity: 0, y: 50, transition },
+};
 
 interface PageWrapperProps {
   children: ReactNode;
 }
 
 const PageWrapper: FC<PageWrapperProps> = ({ children }) => {
-  const randomVariant = useMemo(
-    () => variantsList[Math.floor(Math.random() * variantsList.length)],
-    []
-  );
-
   return (
     <motion.div
       initial="initial"
       animate="animate"
       exit="exit"
-      variants={randomVariant}
+      variants={variant}
     >
       {children}
     </motion.div>
