@@ -115,15 +115,19 @@
 // export default PageWrapper;
 
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import type { ReactNode, FC } from "react";
 
-const transition = { duration: 0.6, ease: "easeInOut" };
-
-const variant = {
-  initial: { opacity: 0, y: 50, transition },
-  animate: { opacity: 1, y: 0, transition },
-  exit: { opacity: 0, y: 50, transition },
+const variants: Variants = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: { duration: 0.4, ease: "easeInOut" },
+  },
+  exit: {
+    opacity: 0,
+    transition: { duration: 0.4, ease: "easeInOut" },
+  },
 };
 
 interface PageWrapperProps {
@@ -136,7 +140,7 @@ const PageWrapper: FC<PageWrapperProps> = ({ children }) => {
       initial="initial"
       animate="animate"
       exit="exit"
-      variants={variant}
+      variants={variants}
     >
       {children}
     </motion.div>
@@ -144,3 +148,4 @@ const PageWrapper: FC<PageWrapperProps> = ({ children }) => {
 };
 
 export default PageWrapper;
+

@@ -161,13 +161,7 @@ const Navbar = () => {
                     <motion.li key={item.key} variants={itemVariant}>
                       <Link
                         to={`/${item.key}`}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          setMenuOpen(false);
-                          setTimeout(() => {
-                            window.location.href = `/${item.key}`;
-                          }, 400);
-                        }}
+                        onClick={() => setMenuOpen(false)}
                         className={`hover:text-blue-400 tracking-[3px] cursor-pointer text-white transition ${
                           index === 0
                             ? "text-xl font-light"
@@ -197,7 +191,7 @@ const Navbar = () => {
                         className="w-1/2 relative flex min-h-[1px]"
                       >
                         <div className="flex flex-wrap w-full p-2 relative transition-all duration-300">
-                          <div className="w-full mb-5 relative">
+                          <div className="w-full relative">
                             <div>
                               <div className="relative">
                                 <p className="text-xs text-white/20 mb-[26px] leading-[18px] transition-colors duration-300">
@@ -219,7 +213,7 @@ const Navbar = () => {
                           </div>
                           <div className="w-full mb-5 relative">
                             <div>
-                              <div className="h-20"></div>
+                              <div className="h-10"></div>
                             </div>
                           </div>
                         </div>
@@ -231,7 +225,7 @@ const Navbar = () => {
                         className="w-1/2 relative flex min-h-[1px]"
                       >
                         <div className="flex flex-wrap w-full p-2 relative transition-all duration-300">
-                          <div className="w-full mb-5 relative">
+                          <div className="w-full relative">
                             <div>
                               <div className="relative">
                                 <p className="text-xs text-white/20 mb-[26px] leading-[18px] transition-colors duration-300">
@@ -253,7 +247,7 @@ const Navbar = () => {
                           </div>
                           <div className="w-full mb-5 relative">
                             <div>
-                              <div className="h-20"></div>
+                              <div className="h-10"></div>
                             </div>
                           </div>
                         </div>
@@ -265,7 +259,7 @@ const Navbar = () => {
                         className="w-1/2 relative flex min-h-[1px]"
                       >
                         <div className="flex flex-wrap w-full p-2 relative transition-all duration-300">
-                          <div className="w-full mb-5 relative">
+                          <div className="w-full relative">
                             <div>
                               <div className="relative">
                                 <p className="text-xs text-white/20 mb-[26px] leading-[18px] transition-colors duration-300">
@@ -294,7 +288,7 @@ const Navbar = () => {
                         className="w-1/2 relative flex min-h-[1px]"
                       >
                         <div className="flex flex-wrap w-full p-2 relative transition-all duration-300">
-                          <div className="w-full mb-5 relative">
+                          <div className="w-full relative">
                             <div>
                               <div className="relative">
                                 <p className="text-xs text-white/20 mb-[26px] leading-[18px] transition-colors duration-300">

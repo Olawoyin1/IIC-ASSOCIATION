@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 
 const images = [
-  "https://plus.unsplash.com/premium_photo-1752658399836-07566560b88f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyfHx8ZW58MHx8fHx8",
-  "https://images.unsplash.com/photo-1682687221006-b7fd60cf9dd0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxfHx8ZW58MHx8fHx8",
-  "https://images.unsplash.com/photo-1752859625900-a7fbeee9b8e3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0fHx8ZW58MHx8fHx8",
+  "../../Images/bg-image.jpg",
+  "../../Images/bg-image1.jpg",
+  "../../Images/bg-image2.jpg",
 ];
 
 const paragraphLines = [
@@ -77,7 +77,8 @@ const About = () => {
   }, []);
 
   return (
-    <section className="relative w-full h-screen overflow-hidden">
+    <main className="relative w-full mx-auto h-screen  z-20 flex items-center justify-center bg-white py-10 overflow-hidden"> 
+    <section className="relative  flex w-[97vw] h-[95vh] items-center overflow-hidden">
       {/* Background Zoom Image */}
       <div className="absolute inset-0 z-0">
         {images.map((img, index) => (
@@ -97,7 +98,7 @@ const About = () => {
       </div>
 
       {/* Navbar */}
-      <div className="relative text-white z-20">
+      <div className=" text-white z-20">
         <Navbar />
       </div>
 
@@ -137,6 +138,7 @@ const About = () => {
         </div>
       </div>
     </section>
+    </main>
   );
 };
 
