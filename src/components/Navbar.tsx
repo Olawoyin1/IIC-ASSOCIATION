@@ -95,7 +95,7 @@ const Navbar = () => {
           className="rotate-90 p-1"
           onClick={() => setMenuOpen(true)}
         >
-          <IoMenu size={24} />
+          <IoMenu size={30} />
         </div>
 
         {/* Language Selector */}
