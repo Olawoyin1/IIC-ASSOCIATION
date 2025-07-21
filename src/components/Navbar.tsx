@@ -109,7 +109,7 @@ const Navbar = () => {
             onMouseLeave={() => resetMagnetic(langRef)}
             className="text-sm flex items-center p-4 gap-0 text-white rounded-full h-10 w-10 justify-center bg-[#262626] font-medium"
           >
-            En <MdKeyboardArrowDown size={18} className="shrink-0" />
+            En <MdKeyboardArrowDown size={18} className="shrink-0"/>
           </span>
 
           {/* Dropdown */}
@@ -133,7 +133,7 @@ const Navbar = () => {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            className="fixed inset-0 bg-[#171616] z-40 flex items-center justify-center"
+            className="fixed inset-0 bg-[#171616] bgnav z-40 flex items-center justify-center"
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
@@ -146,8 +146,8 @@ const Navbar = () => {
             >
               <GrClose color="#ffffff" />
             </div>
-
-            <div className="max-w-5xl w-full mx-auto grid grid-cols-1 md:grid-cols-2 items-center">
+            <div>
+            <div className="max-w-5xl  w-full mx-auto grid grid-cols-1 md:grid-cols-2 items-center">
               <div>
                 {/* Nav Items */}
                 <motion.ul
@@ -322,11 +322,16 @@ const Navbar = () => {
                       </motion.div>
                     </motion.div>
                   </section>
+
                 </div>
               </div>
             </div>
+            
+            </div>
           </motion.div>
+                
         )}
+
       </AnimatePresence>
     </div>
   );

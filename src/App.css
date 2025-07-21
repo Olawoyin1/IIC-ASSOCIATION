@@ -2,3 +2,9 @@
     /* border: 1px solid red; */
 }
 
+
+.bgnav{
+    background-image: url('../public/Images/lines.svg');
+    background-color: #0e0e0e;
+    background-blend-mode: overlay;
+}
