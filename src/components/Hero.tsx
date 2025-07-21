@@ -80,7 +80,7 @@ const Hero = () => {
       {hovered && (
         <div
           ref={cursorRef}
-          className="fixed pointer-events-none z-50 w-16 h-16 flex items-center justify-center rounded-full bg-white text-black font-semibold text-xs transform -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300"
+          className="fixed pointer-events-none z-[999] w-16 h-16 flex items-center justify-center rounded-full bg-white text-black font-semibold text-xs transform -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300"
           //  className="fixed pointer-events-none z-50 w-16 h-16 flex items-center justify-center rounded-full bg-white text-black font-semibold text-xs transform -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 opacity-100"
 
         >

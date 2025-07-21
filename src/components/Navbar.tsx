@@ -108,7 +108,7 @@ const Navbar = () => {
           <span
             onMouseMove={(e) => handleMagnetic(e, langRef)}
             onMouseLeave={() => resetMagnetic(langRef)}
-            className="text-sm flex items-center p-4 gap-0 text-white rounded-full h-10 w-10 justify-center bg-[#262626] font-medium"
+            className="text-sm flex items-center p-4 gap-0 text-white rounded-full h-12 w-12 justify-center bg-[#262626] font-medium"
           >
             En <MdKeyboardArrowDown size={18} className="shrink-0"/>
           </span>
