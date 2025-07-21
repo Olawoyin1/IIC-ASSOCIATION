@@ -4,6 +4,7 @@ import { motion, AnimatePresence, Variants } from "framer-motion";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { GrClose } from "react-icons/gr";
+import { FaPinterestP, FaXTwitter, FaInstagram } from "react-icons/fa6";
 
 const containerVariant: Variants = {
   hidden: { opacity: 0 },
@@ -146,6 +147,19 @@ const Navbar = () => {
             >
               <GrClose color="#ffffff" />
             </div>
+
+            <div className="absolute  border-t border-gray-600 pt-9 list-none bottom-10 left-0 w-full  ">
+              <div className="max-w-5xl mx-auto flex justify-between items-center">
+              <div className="flex gap-3 ">
+                  <li className="w-12 h-12  transition rounded-full border border-gray-600 hover:border-gray-100"><a className="w-full h-full flex items-center justify-center " href=""><FaPinterestP /> </a></li>
+                  <li className="w-12 h-12  transition rounded-full border border-gray-600 hover:border-gray-100"><a className="w-full h-full flex items-center justify-center " href=""><FaXTwitter /> </a></li>
+                  <li className="w-12 h-12  transition rounded-full border border-gray-600 hover:border-gray-100"><a className="w-full h-full flex items-center justify-center " href=""><FaInstagram /> </a></li>
+              </div>
+              <p className="text-gray-200">Available for new projects in August 2021.</p>
+              </div>
+            </div>
+
+
             <div>
             <div className="max-w-5xl  w-full mx-auto grid grid-cols-1 md:grid-cols-2 items-center">
               <div>
@@ -195,7 +209,7 @@ const Navbar = () => {
                             <div>
                               <div className="relative">
                                 <p className="text-xs text-white/20 mb-[26px] leading-[18px] transition-colors duration-300">
-                                  Info
+                                  London
                                 </p>
                               </div>
                             </div>
