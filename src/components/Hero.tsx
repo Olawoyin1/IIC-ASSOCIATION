@@ -106,7 +106,7 @@ const Hero = () => {
                 <Link
                   to={`/image/${index}`}
                   key={index}
-                  className="w-full  h-[97vh] border-2 flex-shrink-0 relative block"
+                  className="w-full  h-[97vh]  flex-shrink-0 relative block"
                 >
                   <img
                     src={image.src}
