@@ -2,6 +2,9 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 // import PageWrapper from "../components/PageWrapper";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 
 // Direct imports (no lazy loading)
 import Home from "../pages/Home";

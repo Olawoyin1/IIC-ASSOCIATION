@@ -78,7 +78,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="absolute top-0 left-0 z-40 w-full h-[80px] flex justify-between items-center px-9">
+    <div className="absolute  top-0 left-0 z-40 w-full h-[80px] flex justify-between items-center px-4 md:px-9">
       {/* Logo */}
       <Link className="text-lg font-bold" to="/">
         IIC ASSC
