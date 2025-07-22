@@ -148,7 +148,7 @@ const Navbar = () => {
               <GrClose color="#ffffff" />
             </div>
 
-            <div className="absolute  border-t border-gray-600 pt-9 list-none bottom-10 left-0 w-full  ">
+            <div className="absolute hidden md:block  border-t border-gray-600 pt-9 list-none bottom-10 left-0 w-full  ">
               <div className="max-w-5xl mx-auto flex-col md:flex-row gap-3 flex justify-between items-center">
               <div className="flex text-white gap-3 ">
                   <li className="w-12 h-12  transition rounded-full border border-gray-600 hover:border-gray-100"><a className="w-full h-full flex items-center justify-center " href=""><FaPinterestP /> </a></li>

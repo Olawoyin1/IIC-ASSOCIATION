@@ -77,8 +77,13 @@ const About = () => {
   }, []);
 
   return (
-    <main className="relative w-full mx-auto h-screen  z-20 flex items-center justify-center bg-white py-10 overflow-hidden"> 
-    <section className="relative  flex w-[97vw] h-[95vh] items-center overflow-hidden">
+
+    <>
+            <Navbar />
+          
+    <main className="relative w-full mx-auto h-screen top-[80px] z-20 flex items-center justify-center bg-white py-10 overflow-hidden"> 
+    
+    <section className="relative flex w-[95vw] h-[97vh] md:w-[97vw] md:h-[95vh] items-center overflow-hidden">
       {/* Background Zoom Image */}
       <div className="absolute inset-0 z-0">
         {images.map((img, index) => (
@@ -98,7 +103,7 @@ const About = () => {
       </div>
 
       {/* Navbar */}
-      <div className=" text-white z-20">
+      <div className="hidden md:flex text-white z-20">
         <Navbar />
       </div>
 
@@ -111,7 +116,7 @@ const About = () => {
           return (
             <motion.div
               key={lineIndex}
-              className="text-lg  font-semibold mb-4 text-start text-gray-200"
+              className="text-xs md:text-lg  font-semibold mb-4 text-start text-gray-200"
             >
               {words.map((word, wordIndex) => (
                 <motion.span
@@ -139,6 +144,8 @@ const About = () => {
       </div>
     </section>
     </main>
+
+    </>
   );
 };
 
