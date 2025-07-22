@@ -67,7 +67,7 @@ const Hero = () => {
 
   return (
     <section className="relative w-full mx-auto h-screen z-20 flex items-center justify-center bg-white py-10 md:overflow-hidden">
-      <div className="md:hidden border-2 z-50 bg-[#040404]">
+      <div className="md:hidden z-50 bg-[#040404]">
         <Navbar />
       </div>
 
@@ -100,7 +100,7 @@ const Hero = () => {
         </div>
       ) : (
         <section className="relative top-[80px]  w-full mx-auto h-screen z-20 flex items-center justify-center py-10 bg-white md:hidden overflow-hidden">
-          <div className="relative w-[95vw] h-[97vh] overflow-hidden">
+          <div className="relative w-[95vw] h-[97vh] overflow-hidden [&_.slick-dots]:hidden">
             <Slider {...sliderSettings}>
               {images.map((image, index) => (
                 <Link
