@@ -157,3 +157,5 @@ const NextArrow = (props: any) => (
 );
 
 export default Hero;
+
+

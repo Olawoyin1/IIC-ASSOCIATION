@@ -78,7 +78,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="absolute  top-0 left-0 z-40 w-full h-[80px] flex justify-between items-center px-4 md:px-9">
+    <div className="absolute border-b md:border-b-0  border-gray-300 top-0 left-0 z-40 w-full h-[80px] flex justify-between items-center px-4 md:px-9">
       {/* Logo */}
       <Link className="text-lg font-bold" to="/">
         IIC ASSC
@@ -92,10 +92,10 @@ const Navbar = () => {
           onMouseMove={(e) => handleMagnetic(e, menuRef)}
           onMouseLeave={() => resetMagnetic(menuRef)}
           style={{ cursor: "pointer" }}
-          className="rotate-90 p-1"
+          className="rotate-90 md:p-1"
           onClick={() => setMenuOpen(true)}
         >
-          <IoMenu size={30} />
+          <IoMenu size={33} />
         </div>
 
         {/* Language Selector */}
