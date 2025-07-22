@@ -134,7 +134,7 @@ const Navbar = () => {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            className="fixed inset-0 bg-[#171616] pt-17 overflow-auto bgnav z-40 flex md:items-center justify-center"
+            className="fixed h-screen inset-0 bg-[#171616] pt-17 overflow-auto bgnav z-40 flex md:items-center justify-center"
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
