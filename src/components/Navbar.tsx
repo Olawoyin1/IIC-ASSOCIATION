@@ -101,7 +101,7 @@ const Navbar = () => {
         {/* Language Selector */}
         <div
           ref={langRef}
-          className="relative"
+          className="relative hidden md:flex"
           onClick={handleLangToggle}
           style={{ cursor: "pointer" }}
         >
@@ -134,7 +134,7 @@ const Navbar = () => {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            className="fixed inset-0 bg-[#171616] bgnav z-40 flex items-center justify-center"
+            className="fixed inset-0 bg-[#171616] pt-17 overflow-auto bgnav z-40 flex md:items-center justify-center"
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
@@ -149,8 +149,8 @@ const Navbar = () => {
             </div>
 
             <div className="absolute  border-t border-gray-600 pt-9 list-none bottom-10 left-0 w-full  ">
-              <div className="max-w-5xl mx-auto flex justify-between items-center">
-              <div className="flex gap-3 ">
+              <div className="max-w-5xl mx-auto flex-col md:flex-row gap-3 flex justify-between items-center">
+              <div className="flex text-white gap-3 ">
                   <li className="w-12 h-12  transition rounded-full border border-gray-600 hover:border-gray-100"><a className="w-full h-full flex items-center justify-center " href=""><FaPinterestP /> </a></li>
                   <li className="w-12 h-12  transition rounded-full border border-gray-600 hover:border-gray-100"><a className="w-full h-full flex items-center justify-center " href=""><FaXTwitter /> </a></li>
                   <li className="w-12 h-12  transition rounded-full border border-gray-600 hover:border-gray-100"><a className="w-full h-full flex items-center justify-center " href=""><FaInstagram /> </a></li>
@@ -161,7 +161,7 @@ const Navbar = () => {
 
 
             <div>
-            <div className="max-w-5xl  w-full mx-auto grid grid-cols-1 md:grid-cols-2 items-center">
+            <div className="max-w-5xl  w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 px-7 sm:px-2 md:gap-0 items-center">
               <div>
                 {/* Nav Items */}
                 <motion.ul
@@ -191,7 +191,7 @@ const Navbar = () => {
 
               {/* =========RIGHT SIDE========= */}
               <div>
-                <div className="flex flex-wrap items-center justify-center p-2 w-full transition-all duration-300 relative">
+                <div className="flex flex-wrap items-center justify-center  w-full transition-all duration-300 relative">
                   <section className="w-full relative block">
                     <motion.div
                       className="flex flex-wrap relative"
@@ -204,7 +204,7 @@ const Navbar = () => {
                         variants={rightGridItemVariant}
                         className="w-1/2 relative flex min-h-[1px]"
                       >
-                        <div className="flex flex-wrap w-full p-2 relative transition-all duration-300">
+                        <div className="flex flex-wrap w-full  relative transition-all duration-300">
                           <div className="w-full relative">
                             <div>
                               <div className="relative">
@@ -227,7 +227,7 @@ const Navbar = () => {
                           </div>
                           <div className="w-full mb-5 relative">
                             <div>
-                              <div className="h-10"></div>
+                              <div className="sm:h-10"></div>
                             </div>
                           </div>
                         </div>
@@ -238,7 +238,7 @@ const Navbar = () => {
                         variants={rightGridItemVariant}
                         className="w-1/2 relative flex min-h-[1px]"
                       >
-                        <div className="flex flex-wrap w-full p-2 relative transition-all duration-300">
+                        <div className="flex flex-wrap w-full  relative transition-all duration-300">
                           <div className="w-full relative">
                             <div>
                               <div className="relative">
@@ -261,7 +261,7 @@ const Navbar = () => {
                           </div>
                           <div className="w-full mb-5 relative">
                             <div>
-                              <div className="h-10"></div>
+                              <div className="sm:h-10"></div>
                             </div>
                           </div>
                         </div>
@@ -272,7 +272,7 @@ const Navbar = () => {
                         variants={rightGridItemVariant}
                         className="w-1/2 relative flex min-h-[1px]"
                       >
-                        <div className="flex flex-wrap w-full p-2 relative transition-all duration-300">
+                        <div className="flex flex-wrap w-full relative transition-all duration-300">
                           <div className="w-full relative">
                             <div>
                               <div className="relative">
@@ -301,7 +301,7 @@ const Navbar = () => {
                         variants={rightGridItemVariant}
                         className="w-1/2 relative flex min-h-[1px]"
                       >
-                        <div className="flex flex-wrap w-full p-2 relative transition-all duration-300">
+                        <div className="flex flex-wrap w-full relative transition-all duration-300">
                           <div className="w-full relative">
                             <div>
                               <div className="relative">
