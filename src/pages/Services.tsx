@@ -11,8 +11,8 @@ const Services = () => {
       {/* Grid Layout */}
       <div className="flex-1 grid grid-rows-2 border-t border-l border-[#d3d4d6]">
         {/* First Row: Three Columns */}
-        <div className="grid grid-cols-3 border-b border-[#d3d4d6]">
-          <div className="border-r border-[#d3d4d6] p-12 ">
+        <div className="grid grid-cols-1  md:grid-cols-3 border-b border-[#d3d4d6]">
+          <div className="border-r border-[#d3d4d6] p-7 md:p-12 ">
             <div className="w-full flex flex-wrap items-start  transition-all duration-300">
               {/* Heading Block */}
               <div className="w-full">
@@ -29,7 +29,7 @@ const Services = () => {
               <div className="w-full">
                 <div className="transition-all duration-300">
                   <div className="relative">
-                    <p className="inline-block leading-[26.88px] text-[#181B31]">
+                    <p className="inline-block text-sm leading-[26.88px] text-[#181B31]">
                       My name is Roberto, I’m a freelance Branding & Digital
                       Designer based by the valley in New York. I currently work
                       at Liquid. I create brand identities, digital experiences,
@@ -43,7 +43,7 @@ const Services = () => {
               </div>
             </div>
           </div>
-          <div className="border-r border-[#d3d4d6] p-12 flex flex-col">
+          <div className="border-t md:border-r border-[#d3d4d6] p-7 md:p-12 flex flex-col">
             <div className="w-full flex flex-wrap items-start  transition-all duration-300">
               {/* Heading Block */}
               <div className="w-full">
@@ -60,7 +60,7 @@ const Services = () => {
               <div className="w-full">
                 <div className="transition-all duration-300">
                   <div className="relative">
-                    <p className="inline-block leading-[26.88px] text-[#181B31]">
+                    <p className="inline-block text-sm leading-[26.88px] text-[#181B31]">
                       I worked with Vodafone, Apple, Google, Amazon and many
                       more startups in San Francisco.
                     </p>
@@ -69,7 +69,7 @@ const Services = () => {
               </div>
             </div>
           </div>
-          <div className="p-12 flex flex-col">
+          <div className="border-t md:border-t-0 border-[#d3d4d6] p-7 md:p-12 flex flex-col">
             <div className="w-full flex flex-wrap items-start transition-all duration-300">
               {/* Heading */}
               <div className="w-full mb-5 relative">
@@ -96,11 +96,11 @@ const Services = () => {
                       ].map((item, i) => (
                         <li
                           key={i}
-                          className="w-full flex items-center mb-[18px] relative"
+                          className="w-full flex text-sm items-center mb-[18px] relative"
                         >
                           <a
                             href="#"
-                            className="w-full flex items-center text-[rgba(0,0,0,0.7)] no-underline bg-transparent shadow-none transition-all duration-300"
+                            className="w-full flex text-sm items-center text-[rgba(0,0,0,0.7)] no-underline bg-transparent shadow-none transition-all duration-300"
                           >
                             {/* Placeholder span if needed later */}
                             <span className="me-3 hidden items-center" />
@@ -117,8 +117,8 @@ const Services = () => {
         </div>
 
         {/* Second Row: Two Equal Columns */}
-        <div className="grid grid-cols-2">
-          <div className="border-r border-[#d3d4d6] p-12 flex flex-col justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-2">
+          <div className="border-t md:border-r border-[#d3d4d6] p-7 md:p-12 flex flex-col justify-center">
             <div className="relative flex w-full flex-wrap items-start  transition-all duration-300">
               {/* Decorative Borders */}
 
@@ -146,11 +146,11 @@ const Services = () => {
                     ].map((item) => (
                       <li
                         key={item}
-                        className="mb-[10px] flex w-full flex-wrap items-center"
+                        className="mb-[10px] text-sm flex w-full flex-wrap items-center"
                       >
                         <a
                           href="#"
-                          className="flex w-full items-center text-[rgba(0,0,0,0.7)] no-underline transition-all duration-300"
+                          className="flex text-sm w-full items-center text-[rgba(0,0,0,0.7)] no-underline transition-all duration-300"
                         >
                           <span className="me-3 hidden"></span>
                           {item}
@@ -173,11 +173,11 @@ const Services = () => {
                     ].map((item) => (
                       <li
                         key={item}
-                        className="mb-[10px] flex w-full flex-wrap items-center"
+                        className="mb-[10px] text-sm flex w-full flex-wrap items-center"
                       >
                         <a
                           href="#"
-                          className="flex w-full items-center text-[rgba(0,0,0,0.7)] no-underline transition-all duration-300"
+                          className="text-sm flex w-full items-center text-[rgba(0,0,0,0.7)] no-underline transition-all duration-300"
                         >
                           <span className="me-3 hidden"></span>
                           {item}
@@ -194,7 +194,7 @@ const Services = () => {
                       (item) => (
                         <li
                           key={item}
-                          className="mb-[10px] flex w-full flex-wrap items-center"
+                          className="mb-[10px] text-sm flex w-full flex-wrap items-center"
                         >
                           <a
                             href="#"
