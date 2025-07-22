@@ -161,7 +161,7 @@ const Navbar = () => {
 
 
             <div>
-            <div className="max-w-5xl  w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 px-7 sm:px-2 md:gap-0 items-center">
+            <div className="max-w-5xl  w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 px-7 sm:px-2 md:gap-0 items-center">
               <div>
                 {/* Nav Items */}
                 <motion.ul
