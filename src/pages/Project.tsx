@@ -13,6 +13,31 @@ const Project = () => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [cursorVisible, setCursorVisible] = useState(false);
   const cursorRef = useRef<HTMLDivElement | null>(null);
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 768);
+
+
+
+  useEffect(() => {
+  if (selectedIndex !== null) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "";
+  }
+
+  return () => {
+    document.body.style.overflow = "";
+  };
+}, [selectedIndex]);
+
+
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 768);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const openViewer = (index: number) => setSelectedIndex(index);
   const closeViewer = () => setSelectedIndex(null);
@@ -29,13 +54,11 @@ const Project = () => {
     }
   };
 
-
-   useEffect(() => {
+  useEffect(() => {
     const move = (e: MouseEvent) => {
       if (cursorRef.current) {
         cursorRef.current.style.left = `${e.clientX}px`;
-cursorRef.current.style.top = `${e.clientY}px`;
-
+        cursorRef.current.style.top = `${e.clientY}px`;
       }
     };
     window.addEventListener("mousemove", move);
@@ -47,20 +70,18 @@ cursorRef.current.style.top = `${e.clientY}px`;
       <Navbar />
 
       {/* Custom Cursor */}
-      {cursorVisible && (
-  <div
-    ref={cursorRef}
-    className="fixed z-[999] pointer-events-none flex items-center justify-center w-16 h-16 rounded-full bg-white text-black text-xs font-semibold tracking-wide transition-transform duration-150 ease-linear will-change-transform -translate-x-1/2 -translate-y-1/2"
-
-  >
-    Explore
-  </div>
-)}
-
+      {cursorVisible && isDesktop && (
+        <div
+          ref={cursorRef}
+          className="fixed z-[999] pointer-events-none flex items-center justify-center w-16 h-16 rounded-full bg-white text-black text-xs font-semibold tracking-wide transition-transform duration-150 ease-linear will-change-transform -translate-x-1/2 -translate-y-1/2"
+        >
+          Explore
+        </div>
+      )}
 
       <div className="flex flex-col lg:flex-row ">
         {/* Left column - Images */}
-        <div className="w-full lg:w-5/12 flex flex-col gap-6">
+        <div className="w-full lg:w-5/12 flex flex-col gap-3">
           {images.map((src, index) => (
             <div
               key={index}
@@ -79,7 +100,7 @@ cursorRef.current.style.top = `${e.clientY}px`;
         </div>
 
         {/* Right column - Sticky Text */}
-        <div className="w-full lg:w-7/12 mt-40">
+        <div className="w-full lg:w-7/12 mt-20 md:mt-40 px-4">
           <div className="sticky top-20">
             <div className="max-w-xl mx-auto">
               <h6 className="text-[15px] font-medium text-[#7e7e7e] mb-2">
@@ -131,13 +152,13 @@ cursorRef.current.style.top = `${e.clientY}px`;
           {/* Arrows */}
           <button
             onClick={prevImage}
-            className="absolute left-6 top-1/2 transform -translate-y-1/2 text-white text-3xl"
+            className="absolute left-6 top-[44%] md:top-1/2 transform -translate-y-1/2 text-white text-3xl"
           >
             <IoChevronBack />
           </button>
           <button
             onClick={nextImage}
-            className="absolute right-6 top-1/2 transform -translate-y-1/2 text-white text-3xl"
+            className="absolute right-6 top-[44%] md:top-1/2 transform -translate-y-1/2 text-white text-3xl"
           >
             <IoChevronForward />
           </button>
@@ -150,7 +171,9 @@ cursorRef.current.style.top = `${e.clientY}px`;
           />
 
           {/* Index */}
-          <p className="absolute bottom-30 right-4 bg-black text-gray-300 p-1 rounded-3xl mt-4 text-xs px-2">{selectedIndex + 1} / {images.length}</p>
+          <p className="absolute bottom-10 md:bottom-30 right-4 bg-black text-gray-300 p-1 rounded-3xl mt-4 text-xs px-2">
+            {selectedIndex + 1} / {images.length}
+          </p>
 
           {/* Thumbnails */}
           <div className="mt-6 flex gap-4 overflow-x-auto px-4">
@@ -160,9 +183,7 @@ cursorRef.current.style.top = `${e.clientY}px`;
                 src={img}
                 onClick={() => setSelectedIndex(idx)}
                 className={`w-24 h-20 object-cover  cursor-pointer border-2 ${
-                  idx === selectedIndex
-                    ? "border-white"
-                    : "border-transparent"
+                  idx === selectedIndex ? "border-white" : "border-transparent"
                 }`}
               />
             ))}
