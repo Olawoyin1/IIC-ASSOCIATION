@@ -114,10 +114,10 @@
 //                     className="w-full h-full object-cover"
 //                   />
 //                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent z-10" />
-                  // <div className="absolute bottom-16 left-5 z-20 text-white">
-                  //   <h2 className="text-xl font-bold mb-1">{image.title}</h2>
-                  //   <p className="text-sm max-w-xs">{image.description}</p>
-                  // </div>
+// <div className="absolute bottom-16 left-5 z-20 text-white">
+//   <h2 className="text-xl font-bold mb-1">{image.title}</h2>
+//   <p className="text-sm max-w-xs">{image.description}</p>
+// </div>
 //                 </Link>
 //               ))}
 //             </Slider>
@@ -391,14 +391,12 @@
 
 // export default Hero;
 
-
-
-
 import { useEffect, useRef, useState } from "react";
 import Navbar from "./Navbar";
 import Slider from "react-slick";
 import { motion } from "framer-motion";
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 // Images
 const images = [
@@ -441,7 +439,12 @@ const Hero = () => {
   const cursorRef = useRef<HTMLDivElement | null>(null);
   const dragStartX = useRef<number | null>(null);
 
+  const navigate = useNavigate();
+
   const [currentSlide, setCurrentSlide] = useState(0);
+
+
+  
 
   useEffect(() => {
     const handleResize = () => {
@@ -480,29 +483,49 @@ const Hero = () => {
     const handleMouseMove = (e: MouseEvent) => {
       if (dragStartX.current !== null) {
         const distance = Math.abs(e.clientX - dragStartX.current);
-        if (distance > 5) {
-          setIsDragging(true);
-        }
+        if (distance > 5) setIsDragging(true);
       }
     };
 
-  const handleMouseUp = () => {
+    const handleMouseUp = () => {
       dragStartX.current = null;
-      setIsDragging(false);
+      setTimeout(() => setIsDragging(false), 50); // prevent click after drag
     };
 
-    if (isDesktop) {
-      window.addEventListener("mousedown", handleMouseDown);
-      window.addEventListener("mousemove", handleMouseMove);
-      window.addEventListener("mouseup", handleMouseUp);
-    }
+    const handleTouchStart = (e: TouchEvent) => {
+      dragStartX.current = e.touches[0].clientX;
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (dragStartX.current !== null) {
+        const distance = Math.abs(e.touches[0].clientX - dragStartX.current);
+        if (distance > 5) setIsDragging(true);
+      }
+    };
+
+    const handleTouchEnd = () => {
+      dragStartX.current = null;
+      setTimeout(() => setIsDragging(false), 50);
+    };
+
+    window.addEventListener("mousedown", handleMouseDown);
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mouseup", handleMouseUp);
+
+    window.addEventListener("touchstart", handleTouchStart);
+    window.addEventListener("touchmove", handleTouchMove);
+    window.addEventListener("touchend", handleTouchEnd);
 
     return () => {
       window.removeEventListener("mousedown", handleMouseDown);
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseup", handleMouseUp);
+
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchmove", handleTouchMove);
+      window.removeEventListener("touchend", handleTouchEnd);
     };
-  }, [isDesktop]);
+  }, []);
 
   // Slider settings
   const sliderSettings = {
@@ -514,12 +537,17 @@ const Hero = () => {
     slidesToScroll: 1,
     arrows: !isDesktop,
     draggable: true,
+    swipeThreshold: 9,
     swipeToSlide: true,
     afterChange: (index: number) => setCurrentSlide(index),
     nextArrow: !isDesktop ? <NextArrow /> : undefined,
     prevArrow: !isDesktop ? <PrevArrow /> : undefined,
     beforeChange: (_: number, newIndex: number) => setCurrentSlide(newIndex),
   };
+
+
+
+
 
   return (
     <section>
@@ -538,12 +566,13 @@ const Hero = () => {
           {/* Slider */}
           <div className="relative w-full h-full ">
             <Slider {...sliderSettings}>
-              {images.map((image, index) => (
+              {/* {images.map((image, index) => (
                 <div
                   key={index}
                   className="w-full h-[97vh] cursor-none"
                   onMouseEnter={() => setHovered(true)}
                   onMouseLeave={() => setHovered(false)}
+                  onClick={handleClick}
                 >
                   <div
                     className="relative w-full h-full overflow-hidden group"
@@ -561,37 +590,75 @@ const Hero = () => {
                   </div>
                   </div>
                 </div>
-              ))}
+              ))} */}
+              {images.map((image, index) => {
+                const handleClick = () => {
+                  if (!isDragging) {
+                    navigate(
+                      `/project/${image.title
+                        .toLowerCase()
+                        .replace(/\s+/g, "-")}`
+                    ); // or use image.slug
+                  }
+                };
+
+                return (
+                  <div
+                    key={index}
+                    className="w-full h-[97vh] cursor-pointer"
+                    onMouseEnter={() => setHovered(true)}
+                    onMouseLeave={() => setHovered(false)}
+                    onClick={handleClick}
+                  >
+                    <div className="relative w-full h-full overflow-hidden group">
+                      <img
+                        src={image.src}
+                        alt={`image-${index}`}
+                        className="w-full h-full object-cover transform group-hover:scale-105 transition-all duration-700 ease-[cubic-bezier(0.65,0,0.35,1)] "
+                        style={{ willChange: "transform" }}
+
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+                      <div className="absolute bottom-16 left-15 z-20 text-white">
+                        <h2 className="text-xl font-bold mb-1">
+                          {image.title}
+                        </h2>
+                        <p className="text-sm max-w-xs">{image.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </Slider>
 
             {/* Mobile Pagination */}
-      {!isDesktop && (
-        <div className="absolute bg-white/30 p-[10px] rounded-2xl px-3 bottom-4 left-1/2 transform -translate-x-1/2 z-30 flex items-center gap-3">
-          {images.map((_, index) => {
-            const isActive = index === currentSlide;
-            return (
-              <motion.div
-                key={index}
-                className={`h-[6px] ${
-                  isActive
-                    ? "w-[24px] bg-black rounded-full"
-                    : "w-[6px] bg-white/50 rounded-full"
-                }`}
-                animate={{
-                  width: isActive ? 24 : 6,
-                  height: 6,
-                  opacity: isActive ? 1 : 0.6,
-                }}
-                transition={{
-                  type: "spring",
-                  stiffness: 260,
-                  damping: 20,
-                }}
-              />
-            );
-          })}
-        </div>
-      )}
+            {!isDesktop && (
+              <div className="absolute bg-white/30 p-[10px] rounded-2xl px-3 bottom-4 left-1/2 transform -translate-x-1/2 z-30 flex items-center gap-3">
+                {images.map((_, index) => {
+                  const isActive = index === currentSlide;
+                  return (
+                    <motion.div
+                      key={index}
+                      className={`h-[6px] ${
+                        isActive
+                          ? "w-[24px] bg-black rounded-full"
+                          : "w-[6px] bg-white/50 rounded-full"
+                      }`}
+                      animate={{
+                        width: isActive ? 24 : 6,
+                        height: 6,
+                        opacity: isActive ? 1 : 0.6,
+                      }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 260,
+                        damping: 20,
+                      }}
+                    />
+                  );
+                })}
+              </div>
+            )}
           </div>
 
           {/* Custom Cursor */}
@@ -605,8 +672,6 @@ const Hero = () => {
           )}
         </section>
       </div>
-
-      
     </section>
   );
 };

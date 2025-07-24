@@ -14,6 +14,7 @@ import About from "../pages/About";
 import Services from "../pages/Services";
 import Project from "../pages/Project";
 import Project2 from "../pages/Project2";
+import Error from "../utils/Error";
 
 
 export default function AnimatedRoutes() {
@@ -55,6 +56,11 @@ export default function AnimatedRoutes() {
         <Route
           path="/project2"
           element={<PageWrapper><Project2 /></PageWrapper>}
+        />
+
+        <Route
+          path="*"
+          element={<PageWrapper><Error /></PageWrapper>}
         />
         {/* <Route
           path="/journey"
