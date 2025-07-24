@@ -619,7 +619,7 @@ const Hero = () => {
 
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
-                      <div className="absolute bottom-16 left-15 z-20 text-white">
+                      <div className="absolute bottom-16 left-7 md:left-15 z-20 text-white">
                         <h2 className="text-xl font-bold mb-1">
                           {image.title}
                         </h2>
