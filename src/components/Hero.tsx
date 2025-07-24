@@ -545,12 +545,9 @@ const Hero = () => {
                   onMouseEnter={() => setHovered(true)}
                   onMouseLeave={() => setHovered(false)}
                 >
-                  <motion.div
+                  <div
                     className="relative w-full h-full overflow-hidden group"
-                    initial={{ opacity: 0, x: 50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -50 }}
-                    transition={{ duration: 0.6, ease: "easeInOut" }}
+                    
                   >
                     <img
                       src={image.src}
@@ -562,7 +559,7 @@ const Hero = () => {
                     <h2 className="text-xl font-bold mb-1">{image.title}</h2>
                     <p className="text-sm max-w-xs">{image.description}</p>
                   </div>
-                  </motion.div>
+                  </div>
                 </div>
               ))}
             </Slider>
