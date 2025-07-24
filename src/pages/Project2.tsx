@@ -142,10 +142,10 @@ const Project2: React.FC = () => {
               Influential and Impactful
             </h3>
 
-            <p className="mt-0 mb-4 align-middle inline-block relative whitespace-normal transition-colors duration-300">
+            <p className="text-sm md:text-base mt-0 mb-4 align-middle inline-block relative whitespace-normal transition-colors duration-300">
               Take advantage of the experiential-learning opportunities built into many programs. You can work in labs on and off campus or even spend semesters overseas. One Construction employs over 3 000 employees, the majority of whom are based on project sites.
             </p>
-            <p className="mt-0 mb-4 align-middle inline-block relative whitespace-normal transition-colors duration-300">
+            <p className="text-sm md:text-base mt-0 mb-4 align-middle inline-block relative whitespace-normal transition-colors duration-300">
               We embrace holistic development and support for employees with the
               aim of being a first-choice employer within our sectors. Through a
               unique combination of engineering, construction and design
@@ -173,7 +173,7 @@ const Project2: React.FC = () => {
               <div className="mb-5 w-full relative">
                 <div className="transition-all duration-300">
                   <div className="relative">
-                    <p className="mt-0 mb-8 align-middle transition-colors duration-300 relative inline-block whitespace-normal text-base text-[#181b31]">
+                    <p className="mt-0 mb-8 align-middle transition-colors duration-300 relative inline-block whitespace-normal text-sm md:text-base text-[#181b31]">
                       Through a unique combination of engineering, construction
                       and design disciplines and expertise, Concor delivers
                       world class infrastructure solutions. We embrace holistic
