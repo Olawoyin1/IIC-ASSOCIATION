@@ -114,10 +114,10 @@
 //                     className="w-full h-full object-cover"
 //                   />
 //                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent z-10" />
-//                   <div className="absolute bottom-16 left-5 z-20 text-white">
-//                     <h2 className="text-xl font-bold mb-1">{image.title}</h2>
-//                     <p className="text-sm max-w-xs">{image.description}</p>
-//                   </div>
+                  // <div className="absolute bottom-16 left-5 z-20 text-white">
+                  //   <h2 className="text-xl font-bold mb-1">{image.title}</h2>
+                  //   <p className="text-sm max-w-xs">{image.description}</p>
+                  // </div>
 //                 </Link>
 //               ))}
 //             </Slider>
@@ -558,10 +558,10 @@ const Hero = () => {
                       className="w-full h-full object-cover transform group-hover:scale-105 transition-all duration-700 ease-[cubic-bezier(0.65,0,0.35,1)] pointer-events-none"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
-                    <div className="absolute bottom-16 left-8 md:left-16 z-20 text-white transition-opacity duration-500 pointer-events-none">
-                      <h2 className="text-xl font-bold mb-1">{image.title}</h2>
-                      <p className="text-sm max-w-xs">{image.description}</p>
-                    </div>
+                    <div className="absolute bottom-16 left-5 z-20 text-white">
+                    <h2 className="text-xl font-bold mb-1">{image.title}</h2>
+                    <p className="text-sm max-w-xs">{image.description}</p>
+                  </div>
                   </motion.div>
                 </div>
               ))}
