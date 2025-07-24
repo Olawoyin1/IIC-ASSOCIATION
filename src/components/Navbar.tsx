@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { IoMenu } from "react-icons/io5";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { MdKeyboardArrowDown } from "react-icons/md";
@@ -52,11 +52,31 @@ const rightGridItemVariant: Variants = {
   },
 };
 
-const Navbar = () => {
+type NavbarProps = {
+  textColor?: string;
+  backgroundColor?: string;
+};
+
+const Navbar: React.FC<NavbarProps> = ({
+  textColor = "text-black",
+  backgroundColor = "",
+}) => {
   const [langOpen, setLangOpen] = useState(false);
   const langRef = useRef<HTMLDivElement>(null!);
   const menuRef = useRef<HTMLDivElement>(null!);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+useEffect(() => {
+  const handleResize = () => {
+    setIsSmallScreen(window.innerWidth < 768); // Tailwind's `md` breakpoint
+  };
+
+  handleResize(); // initial check
+  window.addEventListener("resize", handleResize);
+  return () => window.removeEventListener("resize", handleResize);
+}, []);
+
 
   const handleLangToggle = () => setLangOpen((prev) => !prev);
 
@@ -78,9 +98,13 @@ const Navbar = () => {
   };
 
   return (
-    <div className="absolute border-b md:border-b-0  border-gray-300 top-0 left-0 z-40 w-full h-[80px] flex justify-between items-center px-4 md:px-9">
+    <div 
+      className={`absolute top-0 left-0 z-50 w-full h-[80px] flex justify-between items-center px-4 md:px-9 ${
+    isSmallScreen ? "bg-[#F7F7F7] text-black" : `${backgroundColor}`
+  } ${textColor}`}
+    >
       {/* Logo */}
-      <Link className="text-lg font-bold" to="/">
+      <Link className={`text-lg font-bold ${isSmallScreen ? "text-black" : textColor}`} to="/">
         IIC ASSC
       </Link>
 
@@ -92,7 +116,7 @@ const Navbar = () => {
           onMouseMove={(e) => handleMagnetic(e, menuRef)}
           onMouseLeave={() => resetMagnetic(menuRef)}
           style={{ cursor: "pointer" }}
-          className="rotate-90 md:p-1"
+          className={`rotate-90 md:p-1 ${isSmallScreen ? "text-black" : textColor}`} 
           onClick={() => setMenuOpen(true)}
         >
           <IoMenu size={33} />
@@ -155,7 +179,7 @@ const Navbar = () => {
                   <li className="w-12 h-12  transition rounded-full border border-gray-600 hover:border-gray-100"><a className="w-full h-full flex items-center justify-center " href=""><FaXTwitter /> </a></li>
                   <li className="w-12 h-12  transition rounded-full border border-gray-600 hover:border-gray-100"><a className="w-full h-full flex items-center justify-center " href=""><FaInstagram /> </a></li>
               </div>
-              <p className="text-gray-200">Available for new projects in August 2021.</p>
+              <p className="text-gray-200 text-sm">Available for new projects in August 2021.</p>
               </div>
             </div>
 

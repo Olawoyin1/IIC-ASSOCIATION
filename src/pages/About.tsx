@@ -106,11 +106,11 @@ const About = () => {
 
       {/* Navbar */}
       <div className="hidden md:flex text-white z-20">
-        <Navbar />
+        <Navbar textColor="text-white" backgroundColor="bg-transparent"/>
       </div>
 
       {/* Animated Text */}
-      <div className="relative z-10 max-w-6xl mx-auto flex flex-col items-center justify-center h-full text-white  px-6">
+      <div className="relative z-10 max-w-6xl mx-auto flex flex-col items-center justify-end py-10 md:py-1 md:justify-center h-full text-white  px-6">
         {paragraphLines.map((line, lineIndex) => {
           const words = line.split(" ");
           const animation = getAnimation(lineIndex);
@@ -118,7 +118,7 @@ const About = () => {
           return (
             <motion.div
               key={lineIndex}
-              className="text-xs md:text-lg  font-semibold mb-4 text-start text-gray-200"
+              className="text-sm md:text-lg  font-semibold mb-4 text-start text-gray-200"
             >
               {words.map((word, wordIndex) => (
                 <motion.span

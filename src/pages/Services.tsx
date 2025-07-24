@@ -2,11 +2,12 @@ import Navbar from "../components/Navbar";
 
 const Services = () => {
   return (
-    <section className="min-h-screen w-full bg-[#EDEDED] flex flex-col">
-      {/* Header */}
-      <div className="py-10">
-        <Navbar />
-      </div>
+    <>
+    {/* Header */}
+    <div className="">
+      <Navbar />
+    </div>
+    <section className="relative top-[80px] min-h-screen w-full bg-[#EDEDED] flex flex-col">
 
       {/* Grid Layout */}
       <div className="flex-1 grid grid-rows-2 border-t border-l border-[#d3d4d6]">
@@ -43,7 +44,7 @@ const Services = () => {
               </div>
             </div>
           </div>
-          <div className="border-t md:border-r border-[#d3d4d6] p-7 md:p-12 flex flex-col">
+          <div className=" md:border-r border-[#d3d4d6] p-7 md:p-12 flex flex-col">
             <div className="w-full flex flex-wrap items-start  transition-all duration-300">
               {/* Heading Block */}
               <div className="w-full">
@@ -118,7 +119,7 @@ const Services = () => {
 
         {/* Second Row: Two Equal Columns */}
         <div className="grid grid-cols-1 md:grid-cols-2">
-          <div className="border-t md:border-r border-[#d3d4d6] p-7 md:p-12 flex flex-col justify-center">
+          <div className=" md:border-r border-[#d3d4d6] p-7 md:p-12 flex flex-col justify-center">
             <div className="relative flex w-full flex-wrap items-start  transition-all duration-300">
               {/* Decorative Borders */}
 
@@ -219,6 +220,7 @@ const Services = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 
