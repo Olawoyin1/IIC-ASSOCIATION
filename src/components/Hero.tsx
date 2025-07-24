@@ -566,23 +566,10 @@ const Hero = () => {
                 </div>
               ))}
             </Slider>
-          </div>
 
-          {/* Custom Cursor */}
-          {hovered && isDesktop && (
-            <div
-              ref={cursorRef}
-              className="fixed pointer-events-none z-[9999] w-16 h-16 flex items-center justify-center rounded-full bg-white text-black font-semibold text-xs transform -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300"
-            >
-              {isDragging ? "Drag" : "Explore"}
-            </div>
-          )}
-        </section>
-      </div>
-
-      {/* Mobile Pagination */}
+            {/* Mobile Pagination */}
       {!isDesktop && (
-        <div className="absolute bg-white/30 p-[10px] rounded-2xl px-3 -bottom-9 left-1/2 transform -translate-x-1/2 z-30 flex items-center gap-3">
+        <div className="absolute bg-white/30 p-[10px] rounded-2xl px-3 bottom-4 left-1/2 transform -translate-x-1/2 z-30 flex items-center gap-3">
           {images.map((_, index) => {
             const isActive = index === currentSlide;
             return (
@@ -608,6 +595,21 @@ const Hero = () => {
           })}
         </div>
       )}
+          </div>
+
+          {/* Custom Cursor */}
+          {hovered && isDesktop && (
+            <div
+              ref={cursorRef}
+              className="fixed pointer-events-none z-[9999] w-16 h-16 flex items-center justify-center rounded-full bg-white text-black font-semibold text-xs transform -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300"
+            >
+              {isDragging ? "Drag" : "Explore"}
+            </div>
+          )}
+        </section>
+      </div>
+
+      
     </section>
   );
 };
