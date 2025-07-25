@@ -1,89 +1,55 @@
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+// import { useEffect, useState } from "react";
+// import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 
-const images = [
-  "../../Images/bg-image.jpg",
-  "../../Images/bg-image1.jpg",
-  "../../Images/bg-image2.jpg",
-];
-
 const Contact = () => {
-  const [currentImage, setCurrentImage] = useState(0);
-
-  // Change background every 6 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 6000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <>
       <div className="md:hidden z-50 bg-[#040404]">
         <Navbar />
       </div>
 
-      <main className="relative w-full mx-auto h-screen top-[75px] md:top-0 z-20 flex items-center justify-center bg-white py-10 overflow-hidden">
-        <section className="relative flex w-[95vw] h-[97vh] md:w-[97vw] md:h-[95vh] items-center overflow-hidden">
-          {/* Background Zoom Image */}
-          <div className="absolute inset-0 z-0">
-            {images.map((img, index) => (
-              <motion.img
-                key={index}
-                src={img}
-                alt={`bg-${index}`}
-                className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
-                  currentImage === index ? "opacity-100" : "opacity-0"
-                }`}
-                initial={{ scale: 1.2 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: 6 }}
-              />
-            ))}
-            <div className="absolute inset-0 bg-black/60" />
-          </div>
-
+      <main className="relative w-full mx-auto h-screen top-[89px] md:top-0 z-20 flex items-center justify-center bg-white py-10 overflow-hidden">
+        <section className="relative flex w-[95vw] h-screen overflow-auto md:w-[97vw] md:h-[95vh] items-center bg-[#C1C2C4]">
           {/* Navbar */}
           <div className="hidden md:flex text-white z-20">
             <Navbar textColor="text-white" backgroundColor="bg-transparent" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 border-white max-w-6xl items-center justify-between mx-auto p-3">
+          <div className="h-full grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-6xl items-center justify-between mx-auto p-3 lg:p-0 overflow-auto">
             {/* ======================== LEFT SIDE ====================== */}
             <div>
-              <div className="transition-all p-2.5 w-full flex flex-wrap relative">
+              <div className="transition-all  w-full flex flex-wrap relative">
                 {/* Divider Pattern */}
                 <div className="w-full mb-5 relative">
                   <div className="flex py-6 relative">
-                    <span className="w-40 min-h-[12px] bg-white mask-repeat-x mask-size-[12px_100%] mask-[url('data:image/svg+xml,%3Csvg xmlns=...')]" />
+                    <span className="w-40 min-h-[12px] bg-black mask-repeat-x mask-size-[12px_100%] mask-[url('data:image/svg+xml,%3Csvg xmlns=...')]" />
                   </div>
                 </div>
 
                 {/* Heading Block */}
                 <div className="w-full  relative">
-                  <div className="transition-all text-white">
+                  <div className="transition-al">
                     <div className="relative">
-                      <div className="text-3xl md:text-[58px]  md:leading-[58px] font-bold text-white font-syne inline-block md:mb-[29px] transition-colors">
+                      <div className="text-3xl md:text-[58px]  md:leading-[58px] font-bold  inline-block md:mb-[29px] transition-colors">
                         <h4>Collaboration,</h4>
                         <h4>work enquiries </h4>
-                        <h4>or just say{" "}
-                        <span className="inline-block relative whitespace-nowrap transition-[width] duration-[0.8s] ease-[cubic-bezier(0.86,0,0.07,1)] will-change-[width]">
-                          {/* Text Rotator */}
-                          <span className="absolute top-0 left-0 right-0 opacity-0 animate-[lqdKeywordSlideOut_0.8s]">
-                            hello
+                        <h4>
+                          or just say{" "}
+                          <span className="inline-block relative whitespace-nowrap transition-[width] duration-[0.8s] ease-[cubic-bezier(0.86,0,0.07,1)] will-change-[width]">
+                            {/* Text Rotator */}
+                            <span className="absolute top-0 left-0 right-0 opacity-0 animate-[lqdKeywordSlideOut_0.8s]">
+                              hello
+                            </span>
+                            <span className="absolute top-0 left-0 right-0 opacity-0 animate-[lqdKeywordSlideOut_0.8s]">
+                              hola
+                            </span>
+                            <span className="relative opacity-100 animate-[lqdKeywordSlideIn_0.8s]">
+                              hallo
+                            </span>
                           </span>
-                          <span className="absolute top-0 left-0 right-0 opacity-0 animate-[lqdKeywordSlideOut_0.8s]">
-                            hola
-                          </span>
-                          <span className="relative opacity-100 animate-[lqdKeywordSlideIn_0.8s]">
-                            hallo
-                          </span>
-                        </span></h4>
+                        </h4>
                         <br />
-                        
                       </div>
                     </div>
                   </div>
@@ -99,7 +65,7 @@ const Contact = () => {
                         <div className="w-full mb-5 relative">
                           <div className="transition-all">
                             <div className="relative">
-                              <p className="text-[13px] leading-[18px] text-white inline-block mb-[26px] transition-colors">
+                              <p className="text-[13px] leading-[18px] inline-block mb-[26px] transition-colors">
                                 Find Us
                               </p>
                             </div>
@@ -109,7 +75,7 @@ const Contact = () => {
                         <div className="w-full relative">
                           <div className="transition-all">
                             <div className="relative">
-                              <p className="text-[13px] leading-5 mb-[6.5px] inline-block transition-colors text-white">
+                              <p className="text-[13px] leading-5 mb-[6.5px] inline-block transition-colors ">
                                 290 Maryam Springs 260,
                                 <br />
                                 Courbevoie, Paris, France
@@ -127,7 +93,7 @@ const Contact = () => {
                         <div className="w-full mb-5 relative">
                           <div className="transition-all">
                             <div className="relative">
-                              <p className="text-[13px] leading-[18px] text-white inline-block mb-[26px] transition-colors">
+                              <p className="text-[13px] leading-[18px] inline-block mb-[26px] transition-colors">
                                 Social
                               </p>
                             </div>
@@ -143,7 +109,7 @@ const Contact = () => {
                                     key={platform}
                                     className="flex items-center text-[16px] relative"
                                   >
-                                    <span className="text-[13px] text-white leading-5">
+                                    <span className="text-[13px] leading-5">
                                       {platform}
                                     </span>
                                   </li>
@@ -225,7 +191,6 @@ const Contact = () => {
                 </div>
               </section>
             </div>
-
           </div>
         </section>
       </main>
