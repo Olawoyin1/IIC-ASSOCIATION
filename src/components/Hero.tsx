@@ -614,7 +614,7 @@ const Hero = () => {
                       <img
                         src={image.src}
                         alt={`image-${index}`}
-                        className="w-full h-full object-cover transform group-hover:scale-105 transition-all duration-700 ease-[cubic-bezier(0.65,0,0.35,1)] "
+                        className="w-full h-full object-cover transform group-hover:scale-105 transition-all duration-300 ease-[cubic-bezier(0.65,0,0.35,1)] "
                         style={{ willChange: "transform" }}
 
                       />

@@ -29,7 +29,7 @@ const navItems = [
   { name: "SERVICES", key: "services" },
   { name: "PROJECT 1", key: "project" },
   { name: "PROJECT 2", key: "project2" },
-  { name: "PROJECT 3", key: "project-3" },
+  { name: "CONTACT", key: "contact" },
 ];
 
 const rightGridVariants: Variants = {
