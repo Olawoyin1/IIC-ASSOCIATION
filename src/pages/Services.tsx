@@ -5,9 +5,9 @@ const Services = () => {
     <>
     {/* Header */}
     <div className="">
-      <Navbar />
+      <Navbar backgroundColor="bg-[#EDEDED]" />
     </div>
-    <section className="relative top-[80px] min-h-screen w-full bg-[#EDEDED] flex flex-col">
+    <section className="relative top-[80px] max-h-screen w-full bg-[#EDEDED] flex flex-col">
 
       {/* Grid Layout */}
       <div className="flex-1 grid grid-rows-2 border-t border-l border-[#d3d4d6]">
@@ -30,7 +30,7 @@ const Services = () => {
               <div className="w-full">
                 <div className="transition-all duration-300">
                   <div className="relative">
-                    <p className="inline-block text-sm leading-[26.88px] text-[#181B31]">
+                    <p className="inline-block text-sm md:text-base font-semibold leading-[26.88px] text-[#181B31]">
                       My name is Roberto, I’m a freelance Branding & Digital
                       Designer based by the valley in New York. I currently work
                       at Liquid. I create brand identities, digital experiences,
@@ -61,7 +61,7 @@ const Services = () => {
               <div className="w-full">
                 <div className="transition-all duration-300">
                   <div className="relative">
-                    <p className="inline-block text-sm leading-[26.88px] text-[#181B31]">
+                    <p className="inline-block text-sm md:text-base font-semibold leading-[26.88px] text-[#181B31]">
                       I worked with Vodafone, Apple, Google, Amazon and many
                       more startups in San Francisco.
                     </p>
