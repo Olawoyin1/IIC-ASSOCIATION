@@ -48,7 +48,7 @@ const Main = () => {
           <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-10" />
 
           {/* Hero Content */}
-          <h1 className="relative z-20 mt-0 mb-0 align-middle transition-colors duration-300 inline-block box-border text-[103px] font-syne font-bold leading-[123.6px] text-white whitespace-normal">
+          <h1 className="relative z-20 mt-0 mb-0 text-center transition-colors duration-300 inline-block box-border text-[93px] md:text-[103px] font-syne font-bold leading-[100.6px] md:leading-[123.6px] text-white whitespace-normal">
             Florida Condos
           </h1>
           </div>
@@ -169,6 +169,54 @@ const Main = () => {
         ))}
       </Slider>
     </div>
+
+
+
+
+
+
+    <section className="py-[140px] relative">
+  <div className="max-w-[1170px] mx-auto relative flex">
+    <div className="w-full flex flex-row flex-nowrap items-stretch">
+      <div className="w-full flex flex-wrap px-4 md:px-[210.599px]">
+        {/* Heading */}
+        <div className="w-full mb-5">
+          <div>
+            <div className="relative">
+              <h3 className="mt-0 mb-[13px] align-middle text-[26px] leading-[31.2px] font-bold text-[#181B31] font-syne inline-block transition-colors duration-300">
+                The Solution
+              </h3>
+            </div>
+          </div>
+        </div>
+
+        {/* Paragraph 1 */}
+        <div className="w-full mb-5">
+          <div>
+            <div className="relative">
+              <p className="mt-0 mb-[7.2px] text-[18px] leading-[27px] text-black inline-block transition-colors duration-300">
+                It’s time to bring it all together. Nothing is more rewarding for me than making great work for clients with meaningful missions. Through a deep understanding of our audience’s makeup and motivations, we design digital experiences that connect with people.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Paragraph 2 */}
+        <div className="w-full">
+          <div>
+            <div className="relative">
+              <p className="mt-0 mb-[31.5px] text-[18px] leading-[27px] text-black inline-block transition-colors duration-300">
+                We build and activate brands through cultural insight, strategic vision, and the power of emotion across every element of its expression
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
 
