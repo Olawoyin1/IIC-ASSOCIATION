@@ -9,8 +9,8 @@ const Contact = () => {
         <Navbar />
       </div>
 
-      <main className="relative w-full mx-auto h-screen top-[89px] md:top-0 z-20 flex items-center justify-center bg-white py-10 overflow-hidden">
-        <section className="relative flex w-[95vw] h-screen overflow-auto md:w-[97vw] md:h-[95vh] items-center bg-[#C1C2C4]">
+      <main className="relative w-full mx-auto  top-[49px] md:top-0 z-20 flex items-center justify-center bg-white py-10 overflow-hidden">
+        <section className="relative flex w-[95vw] h-full overflow-hidden  md:w-[97vw] md:h-[95vh] items-center bg-[#C1C2C4]">
           {/* Navbar */}
           <div className="hidden md:flex text-white z-20">
             <Navbar textColor="text-white" backgroundColor="bg-transparent" />
