@@ -594,11 +594,14 @@ const Hero = () => {
               {images.map((image, index) => {
                 const handleClick = () => {
                   if (!isDragging) {
+                    // navigate(
+                    //   `/project/${image.title
+                    //     .toLowerCase()
+                    //     .replace(/\s+/g, "-")}`
+                    // ); 
                     navigate(
-                      `/project/${image.title
-                        .toLowerCase()
-                        .replace(/\s+/g, "-")}`
-                    ); // or use image.slug
+                      `/main`
+                    ); 
                   }
                 };
 

@@ -16,6 +16,7 @@ import Project from "../pages/Project";
 import Project2 from "../pages/Project2";
 import Error from "../utils/Error";
 import Contact from "../pages/Contact";
+import Main from "../pages/Main";
 
 
 export default function AnimatedRoutes() {
@@ -62,6 +63,11 @@ export default function AnimatedRoutes() {
         <Route
           path="/contact"
           element={<PageWrapper><Contact /></PageWrapper>}
+        />
+
+        <Route
+          path="/main"
+          element={<PageWrapper><Main /></PageWrapper>}
         />
 
         <Route
