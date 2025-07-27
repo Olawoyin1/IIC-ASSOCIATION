@@ -54,7 +54,7 @@ const Main = () => {
           <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-10" />
 
           {/* Hero Content */}
-          <h1 className="relative z-20 mt-0 mb-0 text-center transition-colors duration-300 inline-block box-border text-[93px] md:text-[103px] font-semibold md:font-bold leading-[90.6px] md:leading-[123.6px] text-white whitespace-normal">
+          <h1 className="relative z-20 mt-0 mb-0 text-center transition-colors duration-300 inline-block box-border text-[93px] md:text-[103px] md:font-bold leading-[90.6px] md:leading-[123.6px] text-white whitespace-normal">
             Florida Condos
           </h1>
           </div>
@@ -68,7 +68,7 @@ const Main = () => {
     <div className="w-full md:w-1/2 flex ">
       <div className="w-full flex flex-wrap items-start">
         <div className="w-full">
-          <h3 className="text-[24px] leading-[28.8px] font-bold font-syne text-[#181B31] mb-3">
+          <h3 className="text-[24px] leading-[28.8px] md:font-bold font-syne text-[#181B31] mb-3">
             Project Brief
           </h3>
         </div>
@@ -132,14 +132,14 @@ const Main = () => {
       <div className="w-full md:px-[210px]">
         {/* Heading */}
         <div className="mb-5">
-          <h3 className="text-[26px] font-bold leading-[31.2px] text-[#181B31] font-syne">
+          <h3 className="text-[26px] md:font-bold leading-[31.2px] text-[#181B31] font-syne">
             Schematic Design
           </h3>
         </div>
 
         {/* Paragraph 1 */}
         <div className="mb-5">
-          <p className="text-[18px] leading-[27px] text-black">
+          <p className="text-[18px] leading-[27px] ">
             Since the 1980s, as the complexity of buildings began to increase,
             the field of architecture became multi-disciplinary with
             specializations for each project type, technological expertise.
@@ -218,7 +218,7 @@ const Main = () => {
         <div className="w-full mb-5">
           <div>
             <div className="relative">
-              <h3 className="mt-0 mb-[13px] align-middle text-[26px] leading-[31.2px] font-bold text-[#181B31] font-syne inline-block transition-colors duration-300">
+              <h3 className="mt-0 mb-[13px] align-middle text-[26px] leading-[31.2px] md:font-bold text-[#181B31]  inline-block transition-colors duration-300">
                 The Solution
               </h3>
             </div>
@@ -273,7 +273,7 @@ const Main = () => {
         <div className="w-full mb-5 relative">
           <div className="transition-all duration-300">
             <div className="relative">
-              <h3 className="inline-block text-[26px] leading-[31.2px] font-bold font-[Syne] text-[#181B31] mb-[26px]">
+              <h3 className="inline-block text-[26px] leading-[31.2px] md:font-bold font-[Syne] text-[#181B31] mb-[26px]">
                 Concept Design
               </h3>
             </div>
