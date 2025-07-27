@@ -2,6 +2,7 @@ import Navbar from "../components/Navbar";
 import Slider from "react-slick";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import {  FaArrowRightLong, FaArrowLeftLong } from "react-icons/fa6";
 
 const Main = () => {
 
@@ -11,8 +12,62 @@ const Main = () => {
     "../../Images/portfolio-c4.jpg",
   ];
 
+  const testimonials = [
+  {
+    // name: "John Doe",
+    quote: "This service exceeded my expectations in every way!",
+  },
+  {
+    // name: "Jane Smith",
+    quote: "Fantastic experience. Highly recommended!",
+  },
+  {
+    // name: "Alex Johnson",
+    quote: "Truly transformational. The team is amazing!",
+  },
+];
+
+
+function PrevArrow(props: any) {
+  const { onClick } = props;
+  return (
+    <button
+      onClick={onClick}
+      className="absolute left-[-2.5rem] top-1/2 transform -translate-y-1/2 z-10  p-2 rounded-full "
+    >
+      <FaArrowLeftLong />
+    </button>
+  );
+}
+
+function NextArrow(props: any) {
+  const { onClick } = props;
+  return (
+    <button
+      onClick={onClick}
+      className="absolute right-[-2.5rem] top-1/2 transform -translate-y-1/2 z-10  p-2 rounded-full "
+    >
+      <FaArrowRightLong />
+    </button>
+  );
+}
+
   
     const [currentSlide, setCurrentSlide] = useState(0);
+    const [currentSlide2, setCurrentSlide2] = useState(0);
+
+
+  const settings2 = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    
+    beforeChange: (_: number, newIndex: number) => setCurrentSlide2(newIndex),
+  };
 
 
   const settings = {
@@ -79,7 +134,7 @@ const Main = () => {
     <div className="w-full md:w-1/2 flex ">
       <div className="w-full flex flex-wrap items-start">
         <div className="w-full mb-5">
-          <p className="text-[18px] leading-[27px] text-black mb-[9px]">
+          <p className="text-[18px]  leading-[27px]  mb-[9px]">
             Since the 1980s, as the complexity of buildings began to increase, the field of architecture became multi-disciplinary with specializations.
           </p>
         </div>
@@ -92,7 +147,7 @@ const Main = () => {
 
         {/* Meta Info */}
         <div className="w-full">
-          <div className="flex flex-wrap justify-between text-black">
+          <div className="flex flex-wrap justify-between ">
             <div className="w-1/3 mb-4">
               <p className="opacity-35 leading-[26.4px]">Client</p>
               <p className="leading-[26.4px]">LiquidThemes</p>
@@ -273,7 +328,7 @@ const Main = () => {
         <div className="w-full mb-5 relative">
           <div className="transition-all duration-300">
             <div className="relative">
-              <h3 className="inline-block text-[26px] leading-[31.2px] md:font-bold font-[Syne] text-[#181B31] mb-[26px]">
+              <h3 className="inline-block text-[26px] leading-[31.2px] md:font-bold  text-[#181B31] mb-[26px]">
                 Concept Design
               </h3>
             </div>
@@ -313,6 +368,56 @@ const Main = () => {
 <section>
     <img src="../../Images/slider1.jpg" className=" md:h-140 w-full" alt="" />
 </section>
+
+
+
+
+ <section className="w-full pt-16">
+  <h2 className="mt-0 mb-6 text-center w-full inline-block text-[24px] leading-[28.8px]  font-bold text-[#181B31] transition-colors duration-300">
+  Testimonials
+</h2>
+
+      <div className="max-w-4xl mx-auto px-6 relative">
+        <Slider {...settings2}>
+          {testimonials.map((testimonial, idx) => (
+            <div key={idx} className="px-6">
+              <div className="bg-white p-8  text-center">
+                <p className="text-lg text-gray-700 italic mb-4">
+                  “{testimonial.quote}”
+                </p>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
+    </section>
+
+
+     <div className="relative justify-center p-[10px] rounded-2xl px-3  left-1/2 transform -translate-x-1/2 z-30 flex items-center gap-3">
+                      {images.map((_, index) => {
+                        const isActive = index === currentSlide2;
+                        return (
+                          <motion.div
+                            key={index}
+                            className={`h-[6px] ${
+                              isActive
+                                ? "w-[24px] bg-black rounded-full"
+                                : "w-[6px] bg-gray-900 rounded-full"
+                            }`}
+                            animate={{
+                              width: isActive ? 24 : 6,
+                              height: 6,
+                              opacity: isActive ? 1 : 0.6,
+                            }}
+                            transition={{
+                              type: "spring",
+                              stiffness: 260,
+                              damping: 20,
+                            }}
+                          />
+                        );
+                      })}
+                    </div>
 
 
 
