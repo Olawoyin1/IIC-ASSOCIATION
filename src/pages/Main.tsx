@@ -1,8 +1,9 @@
 import Navbar from "../components/Navbar";
 import Slider from "react-slick";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import {  FaArrowRightLong, FaArrowLeftLong } from "react-icons/fa6";
+import { IoIosArrowDown } from "react-icons/io";
 
 const Main = () => {
 
@@ -11,6 +12,25 @@ const Main = () => {
     "../../Images/portfolio-c3.jpg",
     "../../Images/portfolio-c4.jpg",
   ];
+
+
+  const accordionData = [
+  {
+    title: "Accordion Item One",
+    content:
+      "This is the content for the first accordion item. It's hidden by default and slides down smoothly when opened.",
+  },
+  {
+    title: "Accordion Item Two",
+    content:
+      "Second accordion item content. You can put anything you want here, including links, images, or components.",
+  },
+  {
+    title: "Accordion Item Three",
+    content:
+      "Third item. Make sure the transition is smooth and text readable when expanded.",
+  },
+];
 
   const testimonials = [
   {
@@ -55,7 +75,12 @@ function NextArrow(props: any) {
   
     const [currentSlide, setCurrentSlide] = useState(0);
     const [currentSlide2, setCurrentSlide2] = useState(0);
-
+    const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  
+    const toggleAccordion = (index: number) => {
+      setActiveIndex(index === activeIndex ? null : index);
+    };
+    
 
   const settings2 = {
     dots: false,
@@ -92,6 +117,7 @@ function NextArrow(props: any) {
 
 
   return (
+
     <div>
         <Navbar />
       <section>
@@ -418,6 +444,58 @@ function NextArrow(props: any) {
                         );
                       })}
                     </div>
+
+
+
+
+
+
+
+                    {/* =======ACCORDION HERE =========== */}
+                                <div className="max-w-4xl mx-auto py-17 flex flex-col gap-7 ">
+                                  {accordionData.map((item, index) => {
+                                    const isOpen = index === activeIndex;
+                                    return (
+                                      <div key={index} className="">
+                                        <button
+                                          onClick={() => toggleAccordion(index)}
+                                          className={`w-full text-left px-5 py-4 flex items-center justify-between transition-colors rounded-lg cursor-pointer duration-300 ${
+                                            isOpen ? "bg-black text-white" : "bg-gray-100 text-black"
+                                          }`}
+                                        >
+                                          <span className="text-lg font-medium">{item.title}</span>
+                                          <IoIosArrowDown
+                                            className={`transition-transform duration-300 ${
+                                              isOpen ? "rotate-180" : ""
+                                            }`}
+                                            size={20}
+                                          />
+                                        </button>
+                    
+                                        <AnimatePresence initial={false}>
+                                          {isOpen && (
+                                            <motion.div
+                                              key="content"
+                                              initial="collapsed"
+                                              animate="open"
+                                              exit="collapsed"
+                                              variants={{
+                                                open: { height: "auto", opacity: 1 },
+                                                collapsed: { height: 0, opacity: 0 },
+                                              }}
+                                              transition={{ duration: 0.3, ease: "easeInOut" }}
+                                              className="overflow-hidden px-5"
+                                            >
+                                              <div className="py-4 text-sm text-gray-700">
+                                                {item.content}
+                                              </div>
+                                            </motion.div>
+                                          )}
+                                        </AnimatePresence>
+                                      </div>
+                                    );
+                                  })}
+                                </div>
 
 
 
