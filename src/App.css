@@ -25,3 +25,12 @@
 }
 
 
+.main-bg{
+    background-image: url('../public/Images/portfolio-c6.jpg');
+    background-blend-mode: overlay;
+    background-position: center;
+    background-size: auto;
+    background-clip: border-box;
+}
+
+

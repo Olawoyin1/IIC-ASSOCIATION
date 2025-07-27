@@ -1,14 +1,18 @@
 import Navbar from "../components/Navbar";
 import Slider from "react-slick";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 const Main = () => {
 
      const images = [
-    "../../Images/portfolio-c2.jpg",
+    "../../Images/main-hero.jpeg",
     "../../Images/portfolio-c3.jpg",
     "../../Images/portfolio-c4.jpg",
-    "../../Images/portfolio-c6.jpg",
   ];
+
+  
+    const [currentSlide, setCurrentSlide] = useState(0);
 
 
   const settings = {
@@ -27,6 +31,8 @@ const Main = () => {
         },
       },
     ],
+    
+    beforeChange: (_: number, newIndex: number) => setCurrentSlide(newIndex),
   };
 
 
@@ -36,7 +42,7 @@ const Main = () => {
       <section>
         {/* ===============HERO IMAGE ============== */}
         <div className=" mt-[80px] ">
-            <div className="relative flex h-screen  items-center justify-center flex-col overflow-hidden">
+            <div className="relative flex h-173 md:h-screen  items-center justify-center flex-col overflow-hidden">
           {/* Background Image */}
           <img
             src="../../Images/main-hero.jpeg"
@@ -48,7 +54,7 @@ const Main = () => {
           <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-10" />
 
           {/* Hero Content */}
-          <h1 className="relative z-20 mt-0 mb-0 text-center transition-colors duration-300 inline-block box-border text-[93px] md:text-[103px] font-syne font-bold leading-[100.6px] md:leading-[123.6px] text-white whitespace-normal">
+          <h1 className="relative z-20 mt-0 mb-0 text-center transition-colors duration-300 inline-block box-border text-[93px] md:text-[103px] font-semibold md:font-bold leading-[90.6px] md:leading-[123.6px] text-white whitespace-normal">
             Florida Condos
           </h1>
           </div>
@@ -115,15 +121,15 @@ const Main = () => {
 
 
 <section>
-    <img src="../../Images/portfolio-c2.jpg" className="h-140 w-full" alt="" />
+    <img src="../../Images/portfolio-c2.jpg" className=" md:h-140 w-full" alt="" />
 </section>
 
 
 
-<section className="py-[110px] md:py-[120px] relative">
+<section className="py-[80px] md:py-[120px] relative">
   <div className="max-w-[1170px] mx-auto flex relative px-4">
     <div className="w-full flex flex-row flex-wrap">
-      <div className="w-full px-4 md:px-[210px]">
+      <div className="w-full md:px-[210px]">
         {/* Heading */}
         <div className="mb-5">
           <h3 className="text-[26px] font-bold leading-[31.2px] text-[#181B31] font-syne">
@@ -156,26 +162,55 @@ const Main = () => {
 
 
 
- <div className="w-full overflow-x-hidden">
+ <div className="relative w-full overflow-hidden">
+  <div className="mb-4">
       <Slider {...settings}>
         {images.map((src, index) => (
           <div key={index} className="px-10 border-0">
             <img
               src={src}
               alt={`Slide ${index + 1}`}
-              className="w-full md:h-170 object-cover border-0 shadow-md outline-none focus:outline-none"
+              className="w-full h-50 md:h-170 object-cover border-0 shadow-md outline-none focus:outline-none"
             />
           </div>
         ))}
       </Slider>
+      </div>
+
+
     </div>
+      <div className="relative justify-center p-[10px] rounded-2xl px-3  left-1/2 transform -translate-x-1/2 z-30 flex items-center gap-3">
+                      {images.map((_, index) => {
+                        const isActive = index === currentSlide;
+                        return (
+                          <motion.div
+                            key={index}
+                            className={`h-[6px] ${
+                              isActive
+                                ? "w-[24px] bg-black rounded-full"
+                                : "w-[6px] bg-gray-900 rounded-full"
+                            }`}
+                            animate={{
+                              width: isActive ? 24 : 6,
+                              height: 6,
+                              opacity: isActive ? 1 : 0.6,
+                            }}
+                            transition={{
+                              type: "spring",
+                              stiffness: 260,
+                              damping: 20,
+                            }}
+                          />
+                        );
+                      })}
+                    </div>
 
 
 
 
 
 
-    <section className="py-[140px] relative">
+    <section className="py-20 md:py-[140px] relative">
   <div className="max-w-[1170px] mx-auto relative flex">
     <div className="w-full flex flex-row flex-nowrap items-stretch">
       <div className="w-full flex flex-wrap px-4 md:px-[210.599px]">
@@ -217,6 +252,67 @@ const Main = () => {
   </div>
 </section>
 
+
+
+
+
+<section>
+  <div className="h-100 md:h-140 main-bg md:bg-cover bg-left  md:bg-center bg-no-repeat md:bg-fixed  ">
+    
+  </div>
+</section>
+
+
+
+<section className="block py-20 md:py-[140px] relative">
+  <div className="max-w-[1170px] mx-auto flex relative">
+    <div className="w-full flex relative min-h-[1px]">
+      <div className="w-full px-4 md:px-[210.599px] flex flex-wrap relative transition-all duration-300">
+        
+        {/* Heading */}
+        <div className="w-full mb-5 relative">
+          <div className="transition-all duration-300">
+            <div className="relative">
+              <h3 className="inline-block text-[26px] leading-[31.2px] font-bold font-[Syne] text-[#181B31] mb-[26px]">
+                Concept Design
+              </h3>
+            </div>
+          </div>
+        </div>
+
+        {/* Paragraph 1 */}
+        <div className="w-full mb-5 relative">
+          <div className="transition-all duration-300">
+            <div className="relative">
+              <p className="inline-block text-[18px] leading-[27px] text-black mb-[18px]">
+                Our eCommerce design starts and ends with a best-in-class experience strategy that builds brands and drives transactions.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Paragraph 2 */}
+        <div className="w-full relative">
+          <div className="transition-all duration-300">
+            <div className="relative">
+              <p className="inline-block text-[18px] leading-[27px] text-black mb-[31.5px]">
+                My job is to build your website so that it is functional and user friendly but at the same time attractive. My aim is to bring across your message and identity in the most creative way. It’s time to bring it all together. Nothing is more rewarding for me than making great work for clients with meaningful missions.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section>
+    <img src="../../Images/slider1.jpg" className=" md:h-140 w-full" alt="" />
+</section>
 
 
 
