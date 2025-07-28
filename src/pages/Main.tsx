@@ -145,7 +145,9 @@ function NextArrow(props: any) {
 
 
 
-        <section className="py-20 md:py-[100px]">
+      <section className="py-20 md:py-[100px]">
+
+
   <div className="max-w-5xl mx-auto flex flex-col gap-10 md:gap-0 px-4 md:flex-row w-full">
     {/* Left Column */}
     <div className="w-full md:w-1/2 flex ">
@@ -162,13 +164,13 @@ function NextArrow(props: any) {
     <div className="w-full md:w-1/2 flex ">
       <div className="w-full flex flex-wrap items-start">
         <div className="w-full mb-5">
-          <p className="text-[18px]  leading-[27px]  mb-[9px]">
+          <p className="md:text-[18px]  leading-[27px]  mb-[9px]">
             Since the 1980s, as the complexity of buildings began to increase, the field of architecture became multi-disciplinary with specializations.
           </p>
         </div>
 
         <div className="w-full mb-5">
-          <p className="text-[18px] leading-[27px] text-black mb-[54px]">
+          <p className="md:text-[18px] leading-[27px] text-black mb-[54px]">
             Through a unique combination of engineering, construction and design disciplines and expertise, Concor delivers world class infrastructure solutions to customers and stakeholders across a broad range of industry sectors.
           </p>
         </div>
@@ -222,7 +224,7 @@ function NextArrow(props: any) {
 
         {/* Paragraph 1 */}
         <div className="mb-5">
-          <p className="text-[18px] leading-[27px] ">
+          <p className="md:text-[18px] leading-[27px] ">
             Since the 1980s, as the complexity of buildings began to increase,
             the field of architecture became multi-disciplinary with
             specializations for each project type, technological expertise.
@@ -231,7 +233,7 @@ function NextArrow(props: any) {
 
         {/* Paragraph 2 */}
         <div>
-          <p className="text-[18px] leading-[27px] text-black">
+          <p className="md:text-[18px] leading-[27px] text-black">
             Through a unique combination of engineering, construction and
             design disciplines and expertise, Concor delivers world class
             infrastructure solutions to customers and stakeholders across a
@@ -312,7 +314,7 @@ function NextArrow(props: any) {
         <div className="w-full mb-5">
           <div>
             <div className="relative">
-              <p className="mt-0 mb-[7.2px] text-[18px] leading-[27px] text-black inline-block transition-colors duration-300">
+              <p className="mt-0 mb-[7.2px] md:text-[18px] leading-[27px] text-black inline-block transition-colors duration-300">
                 It’s time to bring it all together. Nothing is more rewarding for me than making great work for clients with meaningful missions. Through a deep understanding of our audience’s makeup and motivations, we design digital experiences that connect with people.
               </p>
             </div>
@@ -323,7 +325,7 @@ function NextArrow(props: any) {
         <div className="w-full">
           <div>
             <div className="relative">
-              <p className="mt-0 mb-[31.5px] text-[18px] leading-[27px] text-black inline-block transition-colors duration-300">
+              <p className="mt-0 mb-[31.5px] md:text-[18px] leading-[27px] text-black inline-block transition-colors duration-300">
                 We build and activate brands through cultural insight, strategic vision, and the power of emotion across every element of its expression
               </p>
             </div>
@@ -367,7 +369,7 @@ function NextArrow(props: any) {
         <div className="w-full mb-5 relative">
           <div className="transition-all duration-300">
             <div className="relative">
-              <p className="inline-block text-[18px] leading-[27px] text-black mb-[18px]">
+              <p className="inline-block md:text-[18px] leading-[27px] text-black mb-[18px]">
                 Our eCommerce design starts and ends with a best-in-class experience strategy that builds brands and drives transactions.
               </p>
             </div>
@@ -378,7 +380,7 @@ function NextArrow(props: any) {
         <div className="w-full relative">
           <div className="transition-all duration-300">
             <div className="relative">
-              <p className="inline-block text-[18px] leading-[27px] text-black mb-[31.5px]">
+              <p className="inline-block md:text-[18px] leading-[27px] text-black mb-[31.5px]">
                 My job is to build your website so that it is functional and user friendly but at the same time attractive. My aim is to bring across your message and identity in the most creative way. It’s time to bring it all together. Nothing is more rewarding for me than making great work for clients with meaningful missions.
               </p>
             </div>
