@@ -86,7 +86,7 @@ function NextArrow(props: any) {
 
   const settings2 = {
     dots: false,
-    infinite: false,
+    infinite: false, 
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -517,7 +517,7 @@ function NextArrow(props: any) {
 
 
                     {/* =======ACCORDION HERE =========== */}
-                                <div className="max-w-4xl mx-auto py-17 flex px-4 md:px-0 flex-col gap-7 ">
+                                <div className="max-w-4xl mx-auto pb-17 flex px-4 md:px-0 flex-col gap-7 ">
                                   {accordionData.map((item, index) => {
                                     const isOpen = index === activeIndex;
                                     return (
