@@ -9,9 +9,8 @@ const images = [
 ];
 
 const paragraphLines = [
-  "We are more than creators—we are translators of thought into form, of vision into action. Every project begins with a question, a spark shaped by research, and fueled by the belief that real impact comes, a bold idea that refuses to stay quiet. We embrace complexity, not as a barrier, but as a canvas.",
+  "We are more than creators—we are translators of thought into form, of vision into action. Every project begins with a question, a spark shaped by research, and fueled by the belief that real impact comes, a bold idea that refuses to stay quiet. We but as a canvas.",
   "Our work is guided by intuition, shaped by research, and fueled by the belief that real impact comes from blending creativity with shaped by research, and fueled by the belief that real impact comes purpose. Whether we're building for today or dreaming for tomorrow, our commitment stays the same:",
-  "We believe in the power of vision and change. Every idea is a spark waiting to ignite something great. Our work reflects creativity,shaped by research, and fueled by the belief that real impact comes purpose, and action—to design with meaning, move with intention, and always stay human in a digital world.",
 ];
 
 
@@ -110,7 +109,7 @@ const About = () => {
       </div>
 
       {/* Animated Text */}
-      <div className="relative z-10 max-w-6xl mx-auto flex flex-col items-center justify-end py-10 md:py-1 md:justify-center h-full text-white  px-6">
+      <div className="relative z-10 max-w-6xl mx-auto flex flex-col items-center justify-end py-10 md:py-1 md:justify-center h-full text-white  px-4">
         {paragraphLines.map((line, lineIndex) => {
           const words = line.split(" ");
           const animation = getAnimation(lineIndex);

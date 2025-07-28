@@ -5,6 +5,8 @@ import { useState } from "react";
 import {  FaArrowRightLong, FaArrowLeftLong } from "react-icons/fa6";
 import { IoIosArrowDown } from "react-icons/io";
 
+import { GrCheckmark } from "react-icons/gr";
+
 const Main = () => {
 
      const images = [
@@ -53,7 +55,7 @@ function PrevArrow(props: any) {
   return (
     <button
       onClick={onClick}
-      className="absolute left-[-2.5rem] top-1/2 transform -translate-y-1/2 z-10  p-2 rounded-full "
+      className="absolute left-[-0.5rem] md:left-[-2.5rem] top-1/2 transform -translate-y-1/2 z-10  p-2 rounded-full "
     >
       <FaArrowLeftLong />
     </button>
@@ -65,7 +67,7 @@ function NextArrow(props: any) {
   return (
     <button
       onClick={onClick}
-      className="absolute right-[-2.5rem] top-1/2 transform -translate-y-1/2 z-10  p-2 rounded-full "
+      className="absolute right-[-0.5rem] md:right-[-2.5rem] top-1/2 transform -translate-y-1/2 z-10  p-2 rounded-full "
     >
       <FaArrowRightLong />
     </button>
@@ -399,7 +401,7 @@ function NextArrow(props: any) {
 
 
  <section className="w-full pt-16">
-  <h2 className="mt-0 mb-6 text-center w-full inline-block text-[24px] leading-[28.8px]  font-bold text-[#181B31] transition-colors duration-300">
+  <h2 className="mt-0 mb-6 text-center w-full inline-block text-[24px] leading-[28.8px]   font-bold text-[#181B31] transition-colors duration-300">
   Testimonials
 </h2>
 
@@ -448,11 +450,74 @@ function NextArrow(props: any) {
 
 
 
+<section className="max-w-4xl mx-auto py-17 px-4 md:px-0">
+  <div>
+    <h3 className="mt-0 mb-10 align-middle transition-colors duration-300 relative inline-block text-[25px] leading-[30px] font-syne font-bold text-[#181B31] whitespace-normal">
+  Plan Benefits
+</h3>
+<div className="grid grid-cols-1 md:grid-cols-2">
+  <ul className="p-0 m-0 list-none">
+  {[
+    "Global Data Analysis",
+    "Immediate settlement",
+    "Zero broker commission",
+    "Guaranteed by the services",
+    "Global Data Analysis",
+    "Infrastructure solutions",
+  ].map((text, idx) => (
+    <li key={idx} className="w-full flex items-center relative mb-[15px]">
+      <a
+        href="#"
+        className="w-full flex items-center text-[#383838] no-underline bg-transparent transition-colors duration-300"
+      >
+        <span className="me-3 flex items-center">
+          <GrCheckmark />
+        </span>
+        {text}
+      </a>
+    </li>
+  ))}
+</ul>
+  <ul className="p-0 m-0 list-none">
+  {[
+    "Global Data Analysis",
+    "Immediate settlement",
+    "Zero broker commission",
+    "Guaranteed by the services",
+    "Global Data Analysis",
+    "Infrastructure solutions",
+  ].map((text, idx) => (
+    <li key={idx} className="w-full flex items-center relative mb-[15px]">
+      <a
+        href="#"
+        className="w-full flex items-center text-[#383838] no-underline bg-transparent transition-colors duration-300"
+      >
+        <span className="me-3 flex items-center">
+          <GrCheckmark />
+        </span>
+        {text}
+      </a>
+    </li>
+  ))}
+</ul>
+
+</div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
 
 
 
                     {/* =======ACCORDION HERE =========== */}
-                                <div className="max-w-4xl mx-auto py-17 flex flex-col gap-7 ">
+                                <div className="max-w-4xl mx-auto py-17 flex px-4 md:px-0 flex-col gap-7 ">
                                   {accordionData.map((item, index) => {
                                     const isOpen = index === activeIndex;
                                     return (
@@ -496,6 +561,56 @@ function NextArrow(props: any) {
                                     );
                                   })}
                                 </div>
+
+
+
+
+
+
+<section className="px-4">
+<div className="max-w-md mx-auto transition-all duration-300 bg-[#F7F8FA] rounded-[5px] p-[35px_20px] w-full flex flex-wrap content-start mb-[30px]  relative">
+  {/* Heading */}
+  <div className="w-full mb-[20px]">
+    <h3 className="text-[19px] leading-[22.8px] text-[#181B31] font-syne font-bold whitespace-normal inline-block transition-colors duration-300">
+      Send us a message
+    </h3>
+  </div>
+
+  {/* Form */}
+  <div className="w-full">
+    <form action="#" method="post" noValidate className="w-full">
+      <div className="space-y-[13px]">
+        <input
+          type="text"
+          name="your-name"
+          placeholder="Your name"
+          required
+          className="w-full h-[50px] px-7 rounded bg-white text-[#b7b9c4] text-[14px] leading-[21.92px] font-[din-2014] outline-none transition duration-300"
+        />
+        <input
+          type="email"
+          name="your-email"
+          placeholder="Your email"
+          required
+          className="w-full h-[50px] px-7 rounded bg-white text-[#b7b9c4] text-[14px] leading-[21.92px] font-[din-2014] outline-none transition duration-300"
+        />
+        <textarea
+          name="your-message"
+          placeholder="Message"
+          required
+          className="w-full px-7 py-[14px] bg-white text-[#b7b9c4] text-[14px] leading-[21.92px] font-[din-2014] resize-vertical outline-none transition duration-300"
+        ></textarea>
+      </div>
+      <button
+        type="submit"
+        className="w-full h-[50px] mt-4 px-11 rounded border border-[#b99d7c] bg-[#b99d7c] text-white text-[16px] leading-[21.92px] font-[din-2014] flex items-center justify-center transition duration-300 hover:bg-opacity-90"
+      >
+        Send message
+      </button>
+    </form>
+  </div>
+</div>
+</section>
 
 
 
