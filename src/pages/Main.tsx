@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar";
 import Slider from "react-slick";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import {  FaArrowRightLong, FaArrowLeftLong } from "react-icons/fa6";
+// import {  FaArrowRightLong, FaArrowLeftLong } from "react-icons/fa6";
 import { IoIosArrowDown } from "react-icons/io";
 
 import { GrCheckmark } from "react-icons/gr";
@@ -34,49 +34,46 @@ const Main = () => {
   },
 ];
 
-  const testimonials = [
-  {
-    // name: "John Doe",
-    quote: "This service exceeded my expectations in every way!",
-  },
-  {
-    // name: "Jane Smith",
-    quote: "Fantastic experience. Highly recommended!",
-  },
-  {
-    // name: "Alex Johnson",
-    quote: "Truly transformational. The team is amazing!",
-  },
-];
+//   const testimonials = [
+//   {
+//     quote: "This service exceeded my expectations in every way!",
+//   },
+//   {
+//     quote: "Fantastic experience. Highly recommended!",
+//   },
+//   {
+//     quote: "Truly transformational. The team is amazing!",
+//   },
+// ];
 
 
-function PrevArrow(props: any) {
-  const { onClick } = props;
-  return (
-    <button
-      onClick={onClick}
-      className="absolute left-[-0.5rem] md:left-[-2.5rem] top-1/2 transform -translate-y-1/2 z-10  p-2 rounded-full "
-    >
-      <FaArrowLeftLong />
-    </button>
-  );
-}
+// function PrevArrow(props: any) {
+//   const { onClick } = props;
+//   return (
+//     <button
+//       onClick={onClick}
+//       className="absolute left-[-0.5rem] md:left-[-2.5rem] top-1/2 transform -translate-y-1/2 z-10  p-2 rounded-full "
+//     >
+//       <FaArrowLeftLong />
+//     </button>
+//   );
+// }
 
-function NextArrow(props: any) {
-  const { onClick } = props;
-  return (
-    <button
-      onClick={onClick}
-      className="absolute right-[-0.5rem] md:right-[-2.5rem] top-1/2 transform -translate-y-1/2 z-10  p-2 rounded-full "
-    >
-      <FaArrowRightLong />
-    </button>
-  );
-}
+// function NextArrow(props: any) {
+//   const { onClick } = props;
+//   return (
+//     <button
+//       onClick={onClick}
+//       className="absolute right-[-0.5rem] md:right-[-2.5rem] top-1/2 transform -translate-y-1/2 z-10  p-2 rounded-full "
+//     >
+//       <FaArrowRightLong />
+//     </button>
+//   );
+// }
 
   
     const [currentSlide, setCurrentSlide] = useState(0);
-    const [currentSlide2, setCurrentSlide2] = useState(0);
+    // const [_currentSlide2, setCurrentSlide2] = useState(0);
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
   
     const toggleAccordion = (index: number) => {
@@ -84,17 +81,17 @@ function NextArrow(props: any) {
     };
     
 
-  const settings2 = {
-    dots: false,
-    infinite: false, 
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
+  // const settings2 = {
+  //   dots: false,
+  //   infinite: false, 
+  //   speed: 500,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   nextArrow: <NextArrow />,
+  //   prevArrow: <PrevArrow />,
     
-    beforeChange: (_: number, newIndex: number) => setCurrentSlide2(newIndex),
-  };
+  //   beforeChange: (_: number, newIndex: number) => setCurrentSlide2(newIndex),
+  // };
 
 
   const settings = {
@@ -402,7 +399,7 @@ function NextArrow(props: any) {
 
 
 
- <section className="w-full pt-16">
+ {/* <section className="w-full pt-16">
   <h2 className="mt-0 mb-6 text-center w-full inline-block text-[24px] leading-[28.8px]   font-bold text-[#181B31] transition-colors duration-300">
   Testimonials
 </h2>
@@ -420,10 +417,10 @@ function NextArrow(props: any) {
           ))}
         </Slider>
       </div>
-    </section>
+    </section> */}
 
 
-     <div className="relative justify-center p-[10px] rounded-2xl px-3  left-1/2 transform -translate-x-1/2 z-30 flex items-center gap-3">
+     {/* <div className="relative justify-center p-[10px] rounded-2xl px-3  left-1/2 transform -translate-x-1/2 z-30 flex items-center gap-3">
                       {images.map((_, index) => {
                         const isActive = index === currentSlide2;
                         return (
@@ -447,7 +444,7 @@ function NextArrow(props: any) {
                           />
                         );
                       })}
-                    </div>
+                    </div> */}
 
 
 

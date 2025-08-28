@@ -110,6 +110,8 @@ useEffect(() => {
 
       {/* Right Section */}
       <div className="flex items-center gap-3">
+        <div className="flex items-center">
+
         {/* Menu Icon */}
         <div
           
@@ -129,6 +131,7 @@ useEffect(() => {
         >
           <IoMenu size={33} />
         </div>
+        </div>
 
         {/* Language Selector */}
         <div
@@ -140,7 +143,7 @@ useEffect(() => {
           <span
             onMouseMove={(e) => handleMagnetic(e, langRef)}
             onMouseLeave={() => resetMagnetic(langRef)}
-            className="text-sm flex items-center p-4 gap-0 text-white rounded-full h-12 w-12 justify-center bg-[#262626] font-medium"
+            className="text-xs flex items-center gap-0 text-white rounded-full h-11 w-11 justify-center bg-[#262626] font-medium"
           >
             En <MdKeyboardArrowDown size={18} className="shrink-0"/>
           </span>
