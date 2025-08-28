@@ -569,51 +569,6 @@ function NextArrow(props: any) {
 
 
 
-<section className="px-4">
-<div className="max-w-md mx-auto transition-all duration-300 bg-[#F7F8FA] rounded-[5px] p-[35px_20px] w-full flex flex-wrap content-start mb-[30px]  relative">
-  {/* Heading */}
-  <div className="w-full mb-[20px]">
-    <h3 className="text-[19px] leading-[22.8px] text-[#181B31] font-syne font-bold whitespace-normal inline-block transition-colors duration-300">
-      Send us a message
-    </h3>
-  </div>
-
-  {/* Form */}
-  <div className="w-full">
-    <form action="#" method="post" noValidate className="w-full">
-      <div className="space-y-[13px]">
-        <input
-          type="text"
-          name="your-name"
-          placeholder="Your name"
-          required
-          className="w-full h-[50px] px-7 rounded bg-white text-[#b7b9c4] text-[14px] leading-[21.92px] font-[din-2014] outline-none transition duration-300"
-        />
-        <input
-          type="email"
-          name="your-email"
-          placeholder="Your email"
-          required
-          className="w-full h-[50px] px-7 rounded bg-white text-[#b7b9c4] text-[14px] leading-[21.92px] font-[din-2014] outline-none transition duration-300"
-        />
-        <textarea
-          name="your-message"
-          placeholder="Message"
-          required
-          className="w-full px-7 py-[14px] bg-white text-[#b7b9c4] text-[14px] leading-[21.92px] font-[din-2014] resize-vertical outline-none transition duration-300"
-        ></textarea>
-      </div>
-      <button
-        type="submit"
-        className="w-full h-[50px] mt-4 px-11 rounded border border-[#b99d7c] bg-[#b99d7c] text-white text-[16px] leading-[21.92px] font-[din-2014] flex items-center justify-center transition duration-300 hover:bg-opacity-90"
-      >
-        Send message
-      </button>
-    </form>
-  </div>
-</div>
-</section>
-
 
 
         </div>

@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import Slider from "react-slick";
+
+import { motion } from "framer-motion";
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
 
 const images = [
@@ -15,13 +17,13 @@ const images = [
     src: "../../Images/Image-1.jpg",
     title: "Case Study",
     description: "Digital Design",
-     link: "/main",
+    link: "/main",
   },
   {
     src: "../../Images/Image.jpg",
     title: "Modern Architecture",
     description: "Digital Design",
-     link: "/main",
+    link: "/main",
   },
 ];
 
@@ -29,6 +31,8 @@ const Hero = () => {
   const [hovered, setHovered] = useState(false);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768);
   const cursorRef = useRef<HTMLDivElement | null>(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
 
   useEffect(() => {
     const handleResize = () => {
@@ -66,6 +70,9 @@ const Hero = () => {
     arrows: true,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+    
+    afterChange: (index: number) => setCurrentSlide(index),
+    beforeChange: (_: number, newIndex: number) => setCurrentSlide(newIndex),
   };
 
   return (
@@ -77,7 +84,7 @@ const Hero = () => {
       {isDesktop ? (
         <div className="relative flex w-[99vw] h-[97vh] items-center overflow-hidden">
           <div className="">
-            <Navbar  backgroundColor="bg-transparent" textColor="text-white"/>
+            <Navbar backgroundColor="bg-transparent" textColor="text-white" />
           </div>
 
           {images.map((image, index) => (
@@ -95,7 +102,7 @@ const Hero = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
               <div className="absolute bottom-10 left-16 z-20 text-white">
-                <h2 className="text-xl font-bold mb-1">{image.title}</h2>
+                <h2 className="text-xl font-semibold mb-1">{image.title}</h2>
                 <p className="text-sm max-w-xs">{image.description}</p>
               </div>
             </Link>
@@ -107,7 +114,7 @@ const Hero = () => {
             <Slider {...sliderSettings}>
               {images.map((image, index) => (
                 <Link
-                  to={`/image/${index}`}
+                  to={image.link}
                   key={index}
                   className="w-full  h-[97vh]  flex-shrink-0 relative block"
                 >
@@ -117,13 +124,44 @@ const Hero = () => {
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent z-10" />
-<div className="absolute bottom-16 left-5 z-20 text-white">
-  <h2 className="text-xl font-bold mb-1">{image.title}</h2>
-  <p className="text-sm max-w-xs">{image.description}</p>
-</div>
+                  <div className="absolute bottom-16 left-5 z-20 text-white">
+                    <h2 className="text-xl font-bold mb-1">{image.title}</h2>
+                    <p className="text-sm max-w-xs">{image.description}</p>
+                  </div>
                 </Link>
               ))}
             </Slider>
+
+
+
+            {/* Mobile Pagination */}
+            {!isDesktop && (
+              <div className="absolute bg-white/30 p-[10px] rounded-2xl px-3 bottom-4 left-1/2 transform -translate-x-1/2 z-30 flex items-center gap-3">
+                {images.map((_, index) => {
+                  const isActive = index === currentSlide;
+                  return (
+                    <motion.div
+                      key={index}
+                      className={`h-[6px] ${
+                        isActive
+                          ? "w-[24px] bg-black rounded-full"
+                          : "w-[6px] bg-white/50 rounded-full"
+                      }`}
+                      animate={{
+                        width: isActive ? 24 : 6,
+                        height: 6,
+                        opacity: isActive ? 1 : 0.6,
+                      }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 260,
+                        damping: 20,
+                      }}
+                    />
+                  );
+                })}
+              </div>
+            )}
           </div>
         </section>
       )}

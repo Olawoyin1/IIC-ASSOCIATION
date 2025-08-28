@@ -432,11 +432,31 @@ const images = [
   },
 ];
 
+
+
+ const testimonials = [
+  {
+    // name: "John Doe",
+    quote: "This service exceeded my expectations in every way!",
+  },
+  {
+    // name: "Jane Smith",
+    quote: "Fantastic experience. Highly recommended!",
+  },
+  {
+    // name: "Alex Johnson",
+    quote: "Truly transformational. The team is amazing!",
+  },
+];
+
+
+
 const Hero = () => {
   const [hovered, setHovered] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768);
   const cursorRef = useRef<HTMLDivElement | null>(null);
+// const [currentSlide2, setCurrentSlide2] = useState(0);
   const dragStartX = useRef<number | null>(null);
 
   const navigate = useNavigate();
@@ -444,7 +464,18 @@ const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
 
-  
+   const settings2 = {
+    dots: false,
+    infinite: false, 
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    
+    // beforeChange: (_: number, newIndex: number) => setCurrentSlide2(newIndex),
+  };
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -675,7 +706,112 @@ const Hero = () => {
           )}
         </section>
       </div>
+
+
+
+
+
+        {/* // SEND US A MESSAGE  */}
+        
+<section className="px-4">
+<div className="max-w-md mx-auto transition-all duration-300 bg-[#F7F8FA] rounded-[5px] p-[35px_20px] w-full flex flex-wrap content-start mb-[30px]  relative">
+  {/* Heading */}
+  <div className="w-full mb-[20px]">
+    <h3 className="text-[19px] leading-[22.8px] text-[#181B31] font-syne font-bold whitespace-normal inline-block transition-colors duration-300">
+      Send us a message
+    </h3>
+  </div>
+
+  {/* Form */}
+  <div className="w-full">
+    <form action="#" method="post" noValidate className="w-full">
+      <div className="space-y-[13px]">
+        <input
+          type="text"
+          name="your-name"
+          placeholder="Your name"
+          required
+          className="w-full h-[50px] px-7 rounded bg-white text-[#b7b9c4] text-[14px] leading-[21.92px] font-[din-2014] outline-none transition duration-300"
+        />
+        <input
+          type="email"
+          name="your-email"
+          placeholder="Your email"
+          required
+          className="w-full h-[50px] px-7 rounded bg-white text-[#b7b9c4] text-[14px] leading-[21.92px] font-[din-2014] outline-none transition duration-300"
+        />
+        <textarea
+          name="your-message"
+          placeholder="Message"
+          required
+          className="w-full px-7 py-[14px] bg-white text-[#b7b9c4] text-[14px] leading-[21.92px] font-[din-2014] resize-vertical outline-none transition duration-300"
+        ></textarea>
+      </div>
+      <button
+        type="submit"
+        className="w-full h-[50px] mt-4 px-11 rounded border border-[#b99d7c] bg-[#b99d7c] text-white text-[16px] leading-[21.92px] font-[din-2014] flex items-center justify-center transition duration-300 hover:bg-opacity-90"
+      >
+        Send message
+      </button>
+    </form>
+  </div>
+</div>
+</section>
+
+
+
+
+
+
+
+{/* TESTIMONIALS HERE  */}
+
+ <section className="w-full pt-16">
+  <h2 className="mt-0 mb-6 text-center w-full inline-block text-[24px] leading-[28.8px]   font-bold text-[#181B31] transition-colors duration-300">
+  Testimonials
+</h2>
+
+      <div className="max-w-4xl mx-auto px-6 relative">
+        <Slider {...settings2}>
+          {testimonials.map((testimonial, idx) => (
+            <div key={idx} className="px-6">
+              <div className="bg-white p-8  text-center">
+                <p className="text-lg text-gray-700 italic mb-4">
+                  “{testimonial.quote}”
+                </p>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
     </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+    
+
+
+
+
+
+
+
+
   );
 };
 
