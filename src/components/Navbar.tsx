@@ -112,6 +112,14 @@ useEffect(() => {
       <div className="flex items-center gap-3">
         {/* Menu Icon */}
         <div
+          
+          style={{ cursor: "pointer" }}
+          className={`md:p-1 ${isSmallScreen ? "text-black" : textColor}`} 
+          onClick={() => setMenuOpen(true)}
+        >
+          Menu 
+        </div>
+        <div
           ref={menuRef}
           onMouseMove={(e) => handleMagnetic(e, menuRef)}
           onMouseLeave={() => resetMagnetic(menuRef)}
