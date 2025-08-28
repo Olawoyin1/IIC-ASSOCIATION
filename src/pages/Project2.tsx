@@ -79,12 +79,12 @@ const Project2: React.FC = () => {
   return (
     <div className="w-full min-h-screen">
       <Navbar />
-      <div className=" max-w-6xl  mx-auto mt-[90px]  px-4">
+      <div className=" max-w-6xl  mx-auto mt-[100px]  px-4">
         {/* Slider */}
         <div className="relative w-full overflow-hidden  mb-10">
           <Slider {...settings}>
             {sliderImages.map((src, idx) => (
-              <div key={idx} className="w-full h-[300px] md:h-[80vh]">
+              <div key={idx} className="w-full h-[200px] md:h-[550px]">
                 <img
                   src={src}
                   alt={`Slide ${idx + 1}`}

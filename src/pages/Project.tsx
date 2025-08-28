@@ -66,7 +66,7 @@ const Project = () => {
   }, []);
 
   return (
-    <section className="relative w-full bg-white py-20">
+    <section className="relative w-full bg-white">
       <Navbar />
 
       {/* Custom Cursor */}
@@ -79,7 +79,7 @@ const Project = () => {
         </div>
       )}
 
-      <div className="flex flex-col lg:flex-row ">
+      <div className="flex absolute top-25  flex-col lg:flex-row  ">
         {/* Left column - Images */}
         <div className="w-full lg:w-5/12 flex flex-col gap-3">
           {images.map((src, index) => (

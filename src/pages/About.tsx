@@ -84,7 +84,7 @@ const About = () => {
           
     <main className="relative w-full mx-auto h-screen top-[75px] md:top-0 z-20 flex items-center justify-center bg-white py-10 overflow-hidden"> 
     
-    <section className="relative flex w-[95vw] h-[97vh] md:w-[97vw] md:h-[95vh] items-center overflow-hidden">
+    <section className="relative flex w-[95vw] h-[97vh] md:w-[99vw] md:h-[97vh] items-center overflow-hidden">
       {/* Background Zoom Image */}
       <div className="absolute inset-0 z-0">
         {images.map((img, index) => (
