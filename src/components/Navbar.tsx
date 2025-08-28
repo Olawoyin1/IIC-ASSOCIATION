@@ -24,12 +24,12 @@ const itemVariant: Variants = {
 };
 
 const navItems = [
-  { name: "HOME", key: "" },
-  { name: "ABOUT", key: "about" },
-  { name: "SERVICES", key: "services" },
-  { name: "PROJECT 1", key: "project" },
-  { name: "PROJECT 2", key: "project2" },
-  { name: "CONTACT", key: "contact" },
+  { name: "Home", key: "" },
+  { name: "About", key: "about" },
+  { name: "Services", key: "services" },
+  { name: "Project 1", key: "project" },
+  { name: "Project 2", key: "project2" },
+  { name: "Contact", key: "contact" },
 ];
 
 const rightGridVariants: Variants = {
@@ -114,7 +114,7 @@ useEffect(() => {
         <div
           
           style={{ cursor: "pointer" }}
-          className={`md:p-1 ${isSmallScreen ? "text-black" : textColor}`} 
+          className={`hidden md:flex md:p-1 ${isSmallScreen ? "text-black" : textColor}`} 
           onClick={() => setMenuOpen(true)}
         >
           Menu 
@@ -208,10 +208,10 @@ useEffect(() => {
                       <Link
                         to={`/${item.key}`}
                         onClick={() => setMenuOpen(false)}
-                        className={`hover:text-blue-400 tracking-[3px] cursor-pointer text-white transition ${
+                        className={`hover:text-blue-400 font-semibold tracking-[3px] cursor-pointer text-white transition ${
                           index === 0
-                            ? "text-xl font-light"
-                            : "text-xl font-light"
+                            ? "text-2xl font-lighst"
+                            : "text-2xl font-ligsht"
                         }`}
                       >
                         {item.name}
