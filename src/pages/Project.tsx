@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import Navbar from "../components/Navbar";
 import { IoClose, IoChevronBack, IoChevronForward } from "react-icons/io5";
+import { PiDotsNine } from "react-icons/pi";
 
 const images = [
   "/Images/sticky1.jpg",
@@ -79,64 +80,139 @@ const Project = () => {
         </div>
       )}
 
-      <div className="flex absolute top-25  flex-col lg:flex-row  ">
-        {/* Left column - Images */}
-        <div className="w-full lg:w-5/12 flex flex-col gap-3">
-          {images.map((src, index) => (
-            <div
-              key={index}
-              className="relative w-full overflow-hidden cursor-pointer"
-              onMouseEnter={() => setCursorVisible(true)}
-              onMouseLeave={() => setCursorVisible(false)}
-              onClick={() => openViewer(index)}
-            >
-              <img
-                src={src}
-                alt={`Project image ${index + 1}`}
-                className="w-full h-auto object-cover"
-              />
-            </div>
-          ))}
-        </div>
+      <div className="relative  w-full top-25 grid grid-cols-1 lg:grid-cols-[42%_58%]">
+  {/* Left column - Images */}
+  <div className="w-full flex flex-col gap-3">
+    {images.map((src, index) => (
+      <div
+        key={index}
+        className="relative w-full overflow-hidden cursor-pointer"
+        onMouseEnter={() => setCursorVisible(true)}
+        onMouseLeave={() => setCursorVisible(false)}
+        onClick={() => openViewer(index)}
+      >
+        <img
+          src={src}
+          alt={`Project image ${index + 1}`}
+          className="w-full h-auto object-cover"
+        />
+      </div>
+    ))}
+  </div>
 
-        {/* Right column - Sticky Text */}
-        <div className="w-full lg:w-7/12 mt-20 md:mt-40 px-4">
-          <div className="sticky top-20">
-            <div className="max-w-xl mx-auto">
-              <h6 className="text-[15px] font-medium text-[#7e7e7e] mb-2">
-                Photography
-              </h6>
-              <h1 className="text-[52px] leading-[62px] font-bold text-[#181b31] mb-4">
-                Brooklyn Residence
-              </h1>
-              <p className="text-[18px] leading-[27px] text-black mb-6">
-                Interior design is the art and science of enhancing the
-                interiors, sometimes including the exterior, of a space or
-                building, to achieve a healthier and more aesthetically pleasing
-                environment.
-              </p>
-              <div className="grid grid-cols-2 gap-y-6 text-black">
-                <div>
-                  <p className="opacity-35">Partner</p>
-                  <p>LiquidThemes</p>
-                </div>
-                <div>
-                  <p className="opacity-35">Role</p>
-                  <p>Architect</p>
-                </div>
-                <div>
-                  <p className="opacity-35">Date</p>
-                  <p>June 2022</p>
-                </div>
-                <div>
-                  <p className="opacity-35">Deliverables</p>
-                  <p>Concept Design</p>
-                </div>
-              </div>
-            </div>
+  {/* Right column - Sticky Text */}
+  {/* <div className="w-full  max-h-[950px] sticky top-20 flex items-center justify-center px-4">
+    <div className="">
+      <div className="md:p-[7%_10%_26%_16%] mx-auto">
+        <h6 className="text-[15px] font-medium text-[#7e7e7e] mb-2">
+          Photography
+        </h6>
+        <h1 className="text-[52px] leading-[62px] font-bold text-[#181b31] mb-4">
+          Brooklyn Residence
+        </h1>
+        <p className="text-[18px] leading-[27px] text-black mb-6">
+          Interior design is the art and science of enhancing the interiors,
+          sometimes including the exterior, of a space or building, to achieve a
+          healthier and more aesthetically pleasing environment.
+        </p>
+        <div className="grid grid-cols-2 gap-y-6 text-black">
+          <div>
+            <p className="opacity-35">Partner</p>
+            <p>LiquidThemes</p>
+          </div>
+          <div>
+            <p className="opacity-35">Role</p>
+            <p>Architect</p>
+          </div>
+          <div>
+            <p className="opacity-35">Date</p>
+            <p>June 2022</p>
+          </div>
+          <div>
+            <p className="opacity-35">Deliverables</p>
+            <p>Concept Design</p>
           </div>
         </div>
       </div>
+    </div>
+  </div> */}
+
+  <div className="w-full px-4">
+  <div className="sticky -top-20">
+    <div className="md:p-[19%_10%_26%_16%] mx-auto">
+      <h6 className="text-[15px] font-medium text-[#7e7e7e] mb-2">
+        Photography
+      </h6>
+      <h1 className="text-[52px] leading-[62px] font-bold text-[#181b31] mb-4">
+        Brooklyn Residence
+      </h1>
+      <p className="text-[18px] leading-[27px] text-black mb-6">
+        Interior design is the art and science of enhancing the interiors,
+        sometimes including the exterior, of a space or building, to achieve a
+        healthier and more aesthetically pleasing environment.
+      </p>
+      <div className="grid grid-cols-2 gap-y-6 text-black">
+        <div>
+          <p className="opacity-35">Partner</p>
+          <p>LiquidThemes</p>
+        </div>
+        <div>
+          <p className="opacity-35">Role</p>
+          <p>Architect</p>
+        </div>
+        <div>
+          <p className="opacity-35">Date</p>
+          <p>June 2022</p>
+        </div>
+        <div>
+          <p className="opacity-35">Deliverables</p>
+          <p>Concept Design</p>
+        </div>
+      </div>
+    </div>
+  <div className="relative flex items-center justify-between border-t border-[#e2e2e2] text-black">
+  {/* Previous link */}
+  <a
+    href="https://portfolioboxes.liquid-themes.com/portfolio/artboard-studio/"
+    className="flex basis-1/3 items-center relative no-underline text-black mt-5 mb-5 transition duration-300"
+  >
+    <span className="flex items-center">
+      <span className="flex items-center text-black transition-colors duration-300">
+        {/* Hidden arrow icon placeholder */}
+        <i className="absolute left-[-10px] opacity-0 text-[16px] leading-[16px] transition-transform duration-[650ms] ease-[cubic-bezier(0.23,1,0.32,1)]" />
+        Previous
+      </span>
+    </span>
+  </a>
+
+  {/* Middle dots link */}
+  <a
+    href="#"
+    className="flex basis-1/3 items-center justify-center relative no-underline text-black w-[17px] h-[17px] mt-5 mb-5 transition duration-300"
+  ><PiDotsNine />
+  </a>
+
+  {/* Next link */}
+  <a
+    href="https://portfolioboxes.liquid-themes.com/portfolio/kontrast/"
+    className="flex basis-1/3 flex-row-reverse items-center relative no-underline text-black mt-5 mb-5 transition duration-300"
+  >
+    <span className="flex items-center text-end">
+      <span className="flex items-center text-black transition-colors duration-300">
+        Next
+        {/* Hidden arrow icon placeholder */}
+        <i className="absolute right-[-10px] opacity-0 text-[16px] leading-[16px] transition-transform duration-[650ms] ease-[cubic-bezier(0.23,1,0.32,1)]" />
+      </span>
+    </span>
+  </a>
+</div>
+  </div>
+
+
+</div>
+
+</div>
+
 
       {/* Image Viewer */}
       {selectedIndex !== null && (
