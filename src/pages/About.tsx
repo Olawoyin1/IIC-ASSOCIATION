@@ -9,7 +9,7 @@ const images = [
 ];
 
 const paragraphLines = [
-  "We are more than creators—we are translators of thought into form, of vision into action. Every project begins with a question, a spark shaped by research, and fueled by the belief that real impact comes, a bold idea that refuses to stay quiet. We but as a canvas.",
+  "We are more than creators we are translators of thought into form, of vision into action. Every project begins with a question, a spark shaped by research, and fueled by the belief that real impact comes, a bold idea that refuses to stay quiet. We but as a canvas.",
   "Our work is guided by intuition, shaped by research, and fueled by the belief that real impact comes from blending creativity with shaped by research, and fueled by the belief that real impact comes purpose. Whether we're building for today or dreaming for tomorrow, our commitment stays the same:",
 ];
 
@@ -84,7 +84,7 @@ const About = () => {
           
     <main className="relative w-full mx-auto h-screen top-[75px] md:top-0 z-20 flex items-center justify-center bg-white py-10 overflow-hidden"> 
     
-    <section className="relative flex w-[95vw] h-[97vh] md:w-[99vw] md:h-[97vh] items-center overflow-hidden">
+    <section className="relative flex w-[95vw] h-[97vh] md:w-[97vw] md:h-[95vh] items-center overflow-hidden">
       {/* Background Zoom Image */}
       <div className="absolute inset-0 z-0">
         {images.map((img, index) => (
@@ -126,7 +126,7 @@ const About = () => {
                   initial="hidden"
                   animate="visible"
                   variants={animation}
-                  className="inline-block mx-1 whitespace-nowrap"
+                  className="inline-block mx-1 whitespace-nowrap font-bold"
                 >
                   {word}
                 </motion.span>

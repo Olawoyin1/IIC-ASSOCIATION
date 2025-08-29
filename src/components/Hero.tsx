@@ -82,7 +82,7 @@ const Hero = () => {
       </div>
 
       {isDesktop ? (
-        <div className="relative flex w-[99vw] h-[97vh] items-center overflow-hidden">
+        <div className="relative flex w-[97vw] h-[95vh] items-center overflow-hidden">
           <div className="">
             <Navbar backgroundColor="bg-transparent" textColor="text-white" />
           </div>
@@ -102,7 +102,7 @@ const Hero = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
               <div className="absolute bottom-10 left-16 z-20 text-white">
-                <h2 className="text-xl font-semibold mb-1">{image.title}</h2>
+                <h2 className="text-xl  mb-1">{image.title}</h2>
                 <p className="text-sm max-w-xs">{image.description}</p>
               </div>
             </Link>
