@@ -29,6 +29,7 @@ const navItems = [
   { name: "Services", key: "services" },
   { name: "Project 1", key: "project" },
   { name: "Project 2", key: "project2" },
+  { name: "Project 3", key: "project3" },
   { name: "Contact", key: "contact" },
 ];
 

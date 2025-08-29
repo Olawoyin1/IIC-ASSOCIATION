@@ -17,6 +17,7 @@ import Project2 from "../pages/Project2";
 import Error from "../utils/Error";
 import Contact from "../pages/Contact";
 import Main from "../pages/Main";
+import New from "../pages/New";
 
 
 export default function AnimatedRoutes() {
@@ -42,6 +43,11 @@ export default function AnimatedRoutes() {
         <Route
           path="/about"
           element={<PageWrapper><About /></PageWrapper>}
+        />
+        
+        <Route
+          path="/project3"
+          element={<PageWrapper><New /></PageWrapper>}
         />
 
 
