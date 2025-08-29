@@ -21,7 +21,7 @@ const Services = () => {
           <div className="grid grid-cols-1  md:grid-cols-3 border-b border-[#d3d4d6]">
             {/*FITST COLUMN RIGHT HERE  */}
             <div className="border-r border-[#d3d4d6] p-7 md:p-1 ">
-              <div className="transition-all box-border flex relative w-full flex-wrap content-start rounded-none border-t border-[#d3d4d6] p-16">
+              <div className="transition-all box-border flex relative w-full flex-wrap content-start rounded-none border-t border-[#d3d4d6] md:p-16">
                 {/* Heading */}
                 <div className="box-border mb-5 relative w-full flex flex-row flex-nowrap justify-start items-stretch content-normal gap-0 basis-auto grow-0 shrink min-w-0 order-0 self-auto">
                   <div className="box-border transition-all">
@@ -48,7 +48,7 @@ const Services = () => {
 
             {/* SECOND COLUMN RIGH HERE */}
             <div className=" md:border-r border-[#d3d4d6] p-7 md:p-1 flex flex-col">
-              <div className="relative flex w-full flex-wrap content-start border-none p-16 transition-all">
+              <div className="relative flex w-full flex-wrap content-start border-none md:p-16 transition-all">
                 {/* Animated Border Frames */}
                 
 
@@ -67,7 +67,7 @@ const Services = () => {
                 <div className="relative w-full flex flex-row flex-nowrap justify-start items-stretch content-normal gap-0 basis-auto grow-0 shrink min-w-0 order-0 self-auto">
                   <div className="transition-all box-border">
                     <div className="relative box-border">
-                      <p className="mt-0 mb-12 align-middle transition-colors relative inline-block leading-[26.88px] whitespace-normal">
+                      <p className="mt-0 mb-12 align-middle transition-colors relative inline-block leading-[26.88px] whitespace-normal text-[14.6px] font-semibold">
                         I worked with{" "}
                         <u className="box-border mb-0">
                           Vodafone, Apple, Google, Amazon
@@ -83,7 +83,7 @@ const Services = () => {
 
             {/* THIRD COLUMN RIGH HERE */}
             <div className="border-t md:border-t-0 border-[#d3d4d6] p-7 md:p-1 flex flex-col">
-              <div className="relative flex w-full flex-wrap content-start border-t border-[#d3d4d6] p-16 transition-all">
+              <div className="relative flex w-full flex-wrap content-start  border-[#d3d4d6] md:p-16 transition-all">
                 {/* Heading */}
                 <div className="relative w-full mb-5 flex flex-row flex-nowrap justify-start items-stretch content-normal gap-0 basis-auto grow-0 shrink min-w-0 order-0 self-auto">
                   <div className="transition-all box-border">
@@ -103,7 +103,7 @@ const Services = () => {
                         {careerItems.map((item, index) => (
                           <li
                             key={index}
-                            className={`relative flex w-full flex-wrap items-center box-border ${
+                            className={`relative flex w-full flex-wrap text-[14.6px] font-semibold items-center box-border ${
                               index < careerItems.length - 1 ? "mb-7.5" : ""
                             }`} // mb-30px
                           >
@@ -127,8 +127,8 @@ const Services = () => {
 
           {/* Second Row: Two Equal Columns */}
           <div className="grid grid-cols-1 md:grid-cols-2">
-            <div className=" md:border-r border-[#d3d4d6] p-7 md:p-12 flex flex-col justify-center">
-              <div className="relative flex w-full flex-wrap items-start  transition-all duration-300">
+            <div className=" md:border-r border-[#d3d4d6] p-7 md:p-1 flex flex-col justify-center">
+              <div className="relative flex w-full flex-wrap content-start  border-[#d3d4d6] md:p-16 transition-all">
                 {/* Decorative Borders */}
 
                 {/* Section Title */}
@@ -155,11 +155,11 @@ const Services = () => {
                       ].map((item) => (
                         <li
                           key={item}
-                          className="mb-[10px] text-sm flex w-full flex-wrap items-center"
+                          className="mb-[10px] text- flex w-full flex-wrap items-center"
                         >
                           <a
                             href="#"
-                            className="flex text-sm w-full items-center text-[rgba(0,0,0,0.7)] no-underline transition-all duration-300"
+                            className="flex text-sm font-semibold w-full items-center text-[rgba(0,0,0,0.7)] no-underline transition-all duration-300"
                           >
                             <span className="me-3 hidden"></span>
                             {item}
@@ -186,7 +186,7 @@ const Services = () => {
                         >
                           <a
                             href="#"
-                            className="text-sm flex w-full items-center text-[rgba(0,0,0,0.7)] no-underline transition-all duration-300"
+                            className="text-sm font-semibold flex w-full items-center text-[rgba(0,0,0,0.7)] no-underline transition-all duration-300"
                           >
                             <span className="me-3 hidden"></span>
                             {item}
@@ -206,7 +206,7 @@ const Services = () => {
                       ].map((item) => (
                         <li
                           key={item}
-                          className="mb-[10px] text-sm flex w-full flex-wrap items-center"
+                          className="mb-[10px] text-sm font-semibold flex w-full flex-wrap items-center"
                         >
                           <a
                             href="#"
