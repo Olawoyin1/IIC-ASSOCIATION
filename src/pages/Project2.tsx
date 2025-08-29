@@ -18,19 +18,19 @@ const sliderImages = [
 
 const accordionData = [
   {
-    title: "Accordion Item One",
+    title: "Guanrateed by the trusted architecture services",
     content:
-      "This is the content for the first accordion item. It's hidden by default and slides down smoothly when opened.",
+      "We embrace holistic development and support for employees with the aim of being a first-choice employer within our sectors. Through a unique combination of engineering, construction and design disciplines and expertise.",
   },
   {
     title: "Accordion Item Two",
     content:
-      "Second accordion item content. You can put anything you want here, including links, images, or components.",
+      "We embrace holistic development and support for employees with the aim of being a first-choice employer within our sectors. Through a unique combination of engineering, construction and design disciplines and expertise.",
   },
   {
     title: "Accordion Item Three",
     content:
-      "Third item. Make sure the transition is smooth and text readable when expanded.",
+      "We embrace holistic development and support for employees with the aim of being a first-choice employer within our sectors. Through a unique combination of engineering, construction and design disciplines and expertise.",
   },
 ];
 
@@ -84,7 +84,7 @@ const Project2: React.FC = () => {
         <div className="relative w-full overflow-hidden  mb-10">
           <Slider {...settings}>
             {sliderImages.map((src, idx) => (
-              <div key={idx} className="w-full h-[200px] md:h-[550px]">
+              <div key={idx} className="w-full h-[200px] md:h-[650px]">
                 <img
                   src={src}
                   alt={`Slide ${idx + 1}`}
@@ -235,14 +235,28 @@ const Project2: React.FC = () => {
 
             {/* =======ACCORDION HERE =========== */}
             <div className="w-full flex flex-col gap-7 ">
+              <h3
+  className="
+    mt-0 mb-[12.5px] 
+    align-middle 
+    transition-colors duration-300 
+    relative inline-block 
+    text-[25px] leading-[30px] font-syne font-bold 
+    text-[#181B31] 
+    whitespace-normal
+  "
+>
+  Questions? You’re covered.
+</h3>
+
               {accordionData.map((item, index) => {
                 const isOpen = index === activeIndex;
                 return (
                   <div key={index} className="">
                     <button
                       onClick={() => toggleAccordion(index)}
-                      className={`w-full text-left px-5 py-4 flex items-center justify-between transition-colors rounded-lg cursor-pointer duration-300 ${
-                        isOpen ? "bg-black text-white" : "bg-gray-100 text-black"
+                      className={`w-full text-left px-5 py-4 flex items-center justify-between transition-colors rounded-sm cursor-pointer duration-300 ${
+                        isOpen ? "bg-[#2e2e2e] text-white" : "bg-gray-100 text-black"
                       }`}
                     >
                       <span className="text-lg font-medium">{item.title}</span>
@@ -266,9 +280,9 @@ const Project2: React.FC = () => {
                             collapsed: { height: 0, opacity: 0 },
                           }}
                           transition={{ duration: 0.3, ease: "easeInOut" }}
-                          className="overflow-hidden px-5"
+                          className="overflow-hidden "
                         >
-                          <div className="py-4 text-sm text-gray-700">
+                          <div className="py-4 text-[14.7px] font-semibold text-gray-700">
                             {item.content}
                           </div>
                         </motion.div>

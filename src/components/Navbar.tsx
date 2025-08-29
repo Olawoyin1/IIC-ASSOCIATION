@@ -99,7 +99,7 @@ useEffect(() => {
 
   return (
     <div 
-      className={`absolute top-0 left-0 z-50 w-full h-[100px] flex justify-between items-center px-4 md:px-9 ${
+      className={`absolute top-0 left-0 z-50 w-full h-[90px] flex justify-between items-center px-4 md:px-9 ${
     isSmallScreen ? "bg-[#F7F7F7] text-black" : `${backgroundColor}`
   } ${textColor}`}
     >

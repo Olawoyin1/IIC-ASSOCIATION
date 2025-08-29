@@ -118,7 +118,10 @@ const Main = () => {
   return (
 
     <div>
+      <div className="py-2">
+
         <Navbar />
+      </div>
       <section>
         {/* ===============HERO IMAGE ============== */}
         <div className=" mt-[80px] ">
@@ -131,10 +134,10 @@ const Main = () => {
           />
 
           {/* Dark Overlay */}
-          <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-10" />
+          <div className="absolute top-0 left-0 w-full h-full bg-black/30 z-10" />
 
           {/* Hero Content */}
-          <h1 className="relative z-20 mt-0 mb-0 text-center transition-colors duration-300 inline-block box-border text-[93px] md:text-[103px] md:font-bold leading-[90.6px] md:leading-[123.6px] text-white whitespace-normal">
+          <h1 className="relative z-20 mt-0 mb-0 text-center transition-colors duration-300 inline-block box-border text-[93px] md:text-[100px] md:font-bold leading-[90.6px] md:leading-[123.6px] text-white whitespace-normal">
             Florida Condos
           </h1>
           </div>

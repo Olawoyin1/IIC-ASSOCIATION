@@ -80,7 +80,7 @@ const Project = () => {
         </div>
       )}
 
-      <div className="relative  w-full top-25 grid grid-cols-1 lg:grid-cols-[42%_58%]">
+      <div className="relative  w-full top-22 grid grid-cols-1 lg:grid-cols-[42%_58%]">
   {/* Left column - Images */}
   <div className="w-full flex flex-col gap-3">
     {images.map((src, index) => (
@@ -101,41 +101,7 @@ const Project = () => {
   </div>
 
   {/* Right column - Sticky Text */}
-  {/* <div className="w-full  max-h-[950px] sticky top-20 flex items-center justify-center px-4">
-    <div className="">
-      <div className="md:p-[7%_10%_26%_16%] mx-auto">
-        <h6 className="text-[15px] font-medium text-[#7e7e7e] mb-2">
-          Photography
-        </h6>
-        <h1 className="text-[52px] leading-[62px] font-bold text-[#181b31] mb-4">
-          Brooklyn Residence
-        </h1>
-        <p className="text-[18px] leading-[27px] text-black mb-6">
-          Interior design is the art and science of enhancing the interiors,
-          sometimes including the exterior, of a space or building, to achieve a
-          healthier and more aesthetically pleasing environment.
-        </p>
-        <div className="grid grid-cols-2 gap-y-6 text-black">
-          <div>
-            <p className="opacity-35">Partner</p>
-            <p>LiquidThemes</p>
-          </div>
-          <div>
-            <p className="opacity-35">Role</p>
-            <p>Architect</p>
-          </div>
-          <div>
-            <p className="opacity-35">Date</p>
-            <p>June 2022</p>
-          </div>
-          <div>
-            <p className="opacity-35">Deliverables</p>
-            <p>Concept Design</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> */}
+  
 
   <div className="w-full px-4">
   <div className="sticky -top-20">
@@ -146,7 +112,7 @@ const Project = () => {
       <h1 className="text-[52px] leading-[62px] font-bold text-[#181b31] mb-4">
         Brooklyn Residence
       </h1>
-      <p className="text-[18px] leading-[27px] text-black mb-6">
+      <p className="text-[18px] leading-[27px] text-black font-semibold mb-6">
         Interior design is the art and science of enhancing the interiors,
         sometimes including the exterior, of a space or building, to achieve a
         healthier and more aesthetically pleasing environment.
@@ -154,19 +120,19 @@ const Project = () => {
       <div className="grid grid-cols-2 gap-y-6 text-black">
         <div>
           <p className="opacity-35">Partner</p>
-          <p>LiquidThemes</p>
+          <p className="font-semibold">LiquidThemes</p>
         </div>
         <div>
           <p className="opacity-35">Role</p>
-          <p>Architect</p>
+          <p className="font-semibold">Architect</p>
         </div>
         <div>
           <p className="opacity-35">Date</p>
-          <p>June 2022</p>
+          <p className="font-semibold">June 2022</p>
         </div>
         <div>
           <p className="opacity-35">Deliverables</p>
-          <p>Concept Design</p>
+          <p className="font-semibold">Concept Design</p>
         </div>
       </div>
     </div>

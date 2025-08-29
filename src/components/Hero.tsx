@@ -9,8 +9,8 @@ import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
 const images = [
   {
     src: "../../Images/Image-2.jpg",
-    title: "Modern Architecturesssss",
-    description: "Digital Design 2",
+    title: "Modern Architecture",
+    description: "Digital Design",
     link: "/main",
   },
   {
@@ -103,7 +103,7 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
               <div className="absolute bottom-10 left-16 z-20 text-white">
                 <h2 className="text-xl  mb-1">{image.title}</h2>
-                <p className="text-sm max-w-xs">{image.description}</p>
+                <p className="text-sm text-gray-300 max-w-xs">{image.description}</p>
               </div>
             </Link>
           ))}
