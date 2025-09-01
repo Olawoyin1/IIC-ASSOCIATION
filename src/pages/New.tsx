@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { IoIosArrowDown } from "react-icons/io";
+import Footer from "../components/Footer";
 
 const New = () => {
   const accordionData = [
@@ -31,7 +32,8 @@ const New = () => {
   return (
     <div className="w-full min-h-screen">
       <Navbar />
-      <div className=" max-w-6xl  mx-auto mt-[140px]  px-4">
+      <div className="relative w-full z-10 bg-white ">
+      <div className=" max-w-6xl mb-160  mx-auto mt-[140px]  px-4">
         {/* Sidebar + Main */}
         <div className="flex flex-col-reverse md:flex-row w-full gap-14 pb-20">
           {/* Sidebar */}
@@ -374,6 +376,8 @@ const New = () => {
           </div>
         </div>
       </div>
+              </div>
+      <Footer />
     </div>
   );
 };

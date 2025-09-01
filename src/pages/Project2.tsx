@@ -7,6 +7,7 @@ import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
 import { AnimatePresence, motion } from "framer-motion";
 import { IoIosArrowDown } from "react-icons/io";
 import { GrCheckmark } from "react-icons/gr";
+import Footer from "../components/Footer";
 
 
 const sliderImages = [
@@ -77,9 +78,10 @@ const Project2: React.FC = () => {
     setActiveIndex(index === activeIndex ? null : index);
   };
   return (
-    <div className="w-full min-h-screen">
+    <div className="min-h-screen w-full z-50 bg-white">
       <Navbar />
-      <div className=" max-w-6xl  mx-auto mt-[100px]  px-4">
+      <div className="relative w-full z-10 bg-white">
+      <div className="relative  mb-160   max-w-6xl   mx-auto mt-[100px] bg-white  px-4">
         {/* Slider */}
         <div className="relative w-full overflow-hidden  mb-10">
           <Slider {...settings}>
@@ -96,7 +98,7 @@ const Project2: React.FC = () => {
         </div>
 
         {/* Sidebar + Main */}
-        <div className="flex flex-col-reverse md:flex-row w-full gap-14 pb-20">
+        <div className="flex z-10 flex-col-reverse md:flex-row w-full gap-14 pb-20">
           {/* Sidebar */}
           <div className="w-full md:w-1/4  text-black  rounded-xl">
             <div className="transition-all duration-300 box-border p-9 flex relative w-full flex-wrap items-start rounded-[5px] bg-[#f7f8fa]">
@@ -295,6 +297,8 @@ const Project2: React.FC = () => {
           </div>
         </div>
       </div>
+      </div>
+      <Footer />
     </div>
   );
 };
