@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import Navbar from "../components/Navbar";
 import { IoClose, IoChevronBack, IoChevronForward } from "react-icons/io5";
 import { PiDotsNine } from "react-icons/pi";
+import Footer from "../components/Footer";
 
 const images = [
   "/Images/sticky1.jpg",
@@ -67,7 +68,7 @@ const Project = () => {
   }, []);
 
   return (
-    <section className="relative w-full bg-white">
+    <section className="relative z-10 min-h-screen w-full bg-white">
       <Navbar />
 
       {/* Custom Cursor */}
@@ -80,7 +81,7 @@ const Project = () => {
         </div>
       )}
 
-      <div className="relative  w-full top-22 grid grid-cols-1 lg:grid-cols-[42%_58%]">
+      <div className="relative z-10 mb-160 bg-white w-full top-22 grid grid-cols-1 lg:grid-cols-[42%_58%]">
   {/* Left column - Images */}
   <div className="w-full flex flex-col gap-3">
     {images.map((src, index) => (
@@ -103,7 +104,7 @@ const Project = () => {
   {/* Right column - Sticky Text */}
   
 
-  <div className="w-full px-4">
+  <div className="w-full px-4 bg-white">
   <div className="sticky -top-20">
     <div className="md:p-[19%_10%_26%_16%] mx-auto">
       <h6 className="text-[15px] font-medium text-[#7e7e7e] mb-2">
@@ -232,6 +233,8 @@ const Project = () => {
           </div>
         </div>
       )}
+
+      <Footer />
     </section>
   );
 };
