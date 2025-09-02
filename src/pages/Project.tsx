@@ -69,6 +69,7 @@ const Project = () => {
 
   return (
     <section className="relative z-10 min-h-screen w-full bg-white">
+      
       <Navbar />
 
       {/* Custom Cursor */}
@@ -81,7 +82,7 @@ const Project = () => {
         </div>
       )}
 
-      <div className="relative z-10 mb-160 bg-white w-full top-22 grid grid-cols-1 lg:grid-cols-[42%_58%]">
+      <div className="relative  min-h-1 z-10 mb-20 md:mb-160 bg-white w-full top-22 grid grid-cols-1 lg:grid-cols-[42%_58%]">
   {/* Left column - Images */}
   <div className="w-full flex flex-col gap-3">
     {images.map((src, index) => (
@@ -106,7 +107,7 @@ const Project = () => {
 
   <div className="w-full px-4 bg-white">
   <div className="sticky -top-20">
-    <div className="md:p-[19%_10%_26%_16%] mx-auto">
+    <div className="py-20 md:p-[19%_10%_26%_16%] mx-auto">
       <h6 className="text-[15px] font-medium text-[#7e7e7e] mb-2">
         Photography
       </h6>
@@ -233,8 +234,11 @@ const Project = () => {
           </div>
         </div>
       )}
+      <div>
+
 
       <Footer />
+      </div>
     </section>
   );
 };

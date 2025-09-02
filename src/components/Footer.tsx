@@ -3,11 +3,9 @@
 const Footer = () => {
   return (
     <section 
-//   className="fixed w-full z-10 block py-24 text-white/60 bg-no-repeat transition-all duration-300 bg-[#121B1D] " 
- className="fixed bottom-0 left-0 w-full z-0 block py-24 text-white/60 bg-no-repeat transition-all duration-300 bg-[#121B1D]"
-//   style="background-image: url('https://staging-arc.liquid-themes.com/dark/wp-content/uploads/2022/03/logo-shape-1.svg'); background-position: 106% 170%;"
+ className="md:fixed bottom-0 left-0 w-full z-0 block py-24 text-white/60 bg-no-repeat transition-all duration-300 bg-[#121B1D]"
 >
-  <div className=" grid grid-cols-1 md:grid-cols-2 max-w-[1140px] gap-8 mx-auto">
+  <div className=" grid grid-cols-1 md:grid-cols-2 max-w-[1140px] gap-8 mx-auto px-4 md:px-0">
     
     {/* <!-- Left Column --> */}
     <div className="transition-all duration-300  flex relative w-full flex-wrap content-start">

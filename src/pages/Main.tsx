@@ -6,6 +6,7 @@ import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 
 import { GrCheckmark } from "react-icons/gr";
+import Footer from "../components/Footer";
 
 const Main = () => {
 
@@ -122,9 +123,9 @@ const Main = () => {
 
         <Navbar />
       </div>
-      <section>
+      <section className="md:mb-160">
         {/* ===============HERO IMAGE ============== */}
-        <div className=" mt-[80px] ">
+        <div className=" mt-[80px] relative w-full z-10 bg-white">
             <div className="relative flex h-173 md:h-screen  items-center justify-center flex-col overflow-hidden">
           {/* Background Image */}
           <img
@@ -573,6 +574,7 @@ const Main = () => {
 
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

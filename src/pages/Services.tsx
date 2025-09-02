@@ -14,14 +14,14 @@ const Services = () => {
       <div className="">
         <Navbar backgroundColor="bg-[#EDEDED]" />
       </div>
-      <section className="relative top-[80px]  w-full bg-[#EDEDED] flex flex-col">
+      <section className="relative top-[90px]   w-full bg-[#EDEDED] flex flex-col">
         {/* Grid Layout */}
         <div className="flex-1 grid grid-rows-2 border-t border-l border-[#d3d4d6]">
           {/* First Row: Three Columns */}
           <div className="grid grid-cols-1  md:grid-cols-3 border-b border-[#d3d4d6]">
             {/*FITST COLUMN RIGHT HERE  */}
             <div className="border-r border-[#d3d4d6] p-7 md:p-1 ">
-              <div className="transition-all box-border flex relative w-full flex-wrap content-start rounded-none border-t border-[#d3d4d6] md:p-16">
+              <div className="transition-all box-border flex relative w-full flex-wrap content-start rounded-none  border-[#d3d4d6] md:p-16">
                 {/* Heading */}
                 <div className="box-border mb-5 relative w-full flex flex-row flex-nowrap justify-start items-stretch content-normal gap-0 basis-auto grow-0 shrink min-w-0 order-0 self-auto">
                   <div className="box-border transition-all">

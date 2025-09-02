@@ -81,7 +81,7 @@ const Project2: React.FC = () => {
     <div className="min-h-screen w-full z-50 bg-white">
       <Navbar />
       <div className="relative w-full z-10 bg-white">
-      <div className="relative  mb-160   max-w-6xl   mx-auto mt-[100px] bg-white  px-4">
+      <div className="relative  md:mb-160   max-w-6xl   mx-auto mt-[100px] bg-white  px-4">
         {/* Slider */}
         <div className="relative w-full overflow-hidden  mb-10">
           <Slider {...settings}>
